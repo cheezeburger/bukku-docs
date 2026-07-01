@@ -180,7 +180,8 @@
             "schema": {
               "type": "string",
               "format": "date"
-            }
+            },
+            "required": false
           },
           {
             "name": "date_from",
@@ -189,7 +190,8 @@
             "schema": {
               "type": "string",
               "format": "date"
-            }
+            },
+            "required": false
           },
           {
             "name": "date_to",
@@ -198,7 +200,8 @@
             "schema": {
               "type": "string",
               "format": "date"
-            }
+            },
+            "required": false
           },
           {
             "name": "search",
@@ -207,7 +210,8 @@
             "schema": {
               "type": "string",
               "maxLength": 100
-            }
+            },
+            "required": false
           },
           {
             "name": "status",
@@ -232,7 +236,8 @@
               "type": "integer",
               "minimum": 1,
               "default": 1
-            }
+            },
+            "required": false
           },
           {
             "name": "page_size",
@@ -243,7 +248,8 @@
               "minimum": 1,
               "maximum": 100,
               "default": 30
-            }
+            },
+            "required": false
           },
           {
             "name": "sort_by",
@@ -262,7 +268,8 @@
                 "description",
                 "created_at"
               ]
-            }
+            },
+            "required": false
           },
           {
             "name": "sort_dir",
@@ -274,7 +281,8 @@
                 "asc",
                 "desc"
               ]
-            }
+            },
+            "required": false
           }
         ],
         "responses": {
@@ -613,29 +621,7 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {
-                  "name": {
-                    "$ref": "../../components/accounts/req_account_name.yaml"
-                  },
-                  "type": {
-                    "$ref": "../../components/accounts/req_account_type.yaml"
-                  },
-                  "system_type": {
-                    "$ref": "../../components/accounts/req_account_system_type.yaml"
-                  },
-                  "parent_id": {
-                    "$ref": "../../components/accounts/req_account_parent_id.yaml"
-                  },
-                  "classification": {
-                    "$ref": "../../components/accounts/req_account_classification.yaml"
-                  },
-                  "code": {
-                    "$ref": "../../components/accounts/req_account_code.yaml"
-                  },
-                  "description": {
-                    "$ref": "../../components/accounts/req_account_description.yaml"
-                  }
-                },
+                "properties": {},
                 "required": [
                   "name",
                   "type"
@@ -677,7 +663,8 @@
             "schema": {
               "type": "string",
               "maxLength": 100
-            }
+            },
+            "required": false
           },
           {
             "name": "category",
@@ -692,7 +679,8 @@
                 "income",
                 "expenses"
               ]
-            }
+            },
+            "required": false
           },
           {
             "name": "is_archived",
@@ -701,7 +689,8 @@
             "schema": {
               "type": "boolean",
               "default": false
-            }
+            },
+            "required": false
           },
           {
             "name": "sort_by",
@@ -715,7 +704,8 @@
                 "name",
                 "balance"
               ]
-            }
+            },
+            "required": false
           },
           {
             "name": "sort_dir",
@@ -727,7 +717,8 @@
                 "asc",
                 "desc"
               ]
-            }
+            },
+            "required": false
           }
         ],
         "responses": {
@@ -807,29 +798,7 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {
-                  "name": {
-                    "$ref": "../../components/accounts/req_account_name.yaml"
-                  },
-                  "type": {
-                    "$ref": "../../components/accounts/req_account_type.yaml"
-                  },
-                  "system_type": {
-                    "$ref": "../../components/accounts/req_account_system_type.yaml"
-                  },
-                  "parent_id": {
-                    "$ref": "../../components/accounts/req_account_parent_id.yaml"
-                  },
-                  "classification": {
-                    "$ref": "../../components/accounts/req_account_classification.yaml"
-                  },
-                  "code": {
-                    "$ref": "../../components/accounts/req_account_code.yaml"
-                  },
-                  "description": {
-                    "$ref": "../../components/accounts/req_account_description.yaml"
-                  }
-                },
+                "properties": {},
                 "required": [
                   "name",
                   "type",
@@ -879,11 +848,7 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {
-                  "is_archived": {
-                    "$ref": "../../components/is_archived/req_is_archived.yaml"
-                  }
-                },
+                "properties": {},
                 "required": [
                   "is_archived"
                 ]
@@ -1169,7 +1134,8 @@
             "schema": {
               "type": "string",
               "format": "date"
-            }
+            },
+            "required": false
           },
           {
             "name": "date_to",
@@ -1178,7 +1144,8 @@
             "schema": {
               "type": "string",
               "format": "date"
-            }
+            },
+            "required": false
           },
           {
             "name": "search",
@@ -1187,7 +1154,8 @@
             "schema": {
               "type": "string",
               "maxLength": 100
-            }
+            },
+            "required": false
           },
           {
             "name": "contact_id",
@@ -1247,7 +1215,8 @@
               "type": "integer",
               "minimum": 1,
               "default": 1
-            }
+            },
+            "required": false
           },
           {
             "name": "page_size",
@@ -1258,7 +1227,8 @@
               "minimum": 1,
               "maximum": 100,
               "default": 30
-            }
+            },
+            "required": false
           },
           {
             "name": "sort_by",
@@ -1275,7 +1245,8 @@
                 "description",
                 "created_at"
               ]
-            }
+            },
+            "required": false
           },
           {
             "name": "sort_dir",
@@ -1287,7 +1258,8 @@
                 "asc",
                 "desc"
               ]
-            }
+            },
+            "required": false
           }
         ],
         "responses": {
@@ -1896,7 +1868,8 @@
             "schema": {
               "type": "string",
               "format": "date"
-            }
+            },
+            "required": false
           },
           {
             "name": "date_to",
@@ -1905,7 +1878,8 @@
             "schema": {
               "type": "string",
               "format": "date"
-            }
+            },
+            "required": false
           },
           {
             "name": "search",
@@ -1914,7 +1888,8 @@
             "schema": {
               "type": "string",
               "maxLength": 100
-            }
+            },
+            "required": false
           },
           {
             "name": "contact_id",
@@ -1974,7 +1949,8 @@
               "type": "integer",
               "minimum": 1,
               "default": 1
-            }
+            },
+            "required": false
           },
           {
             "name": "page_size",
@@ -1985,7 +1961,8 @@
               "minimum": 1,
               "maximum": 100,
               "default": 30
-            }
+            },
+            "required": false
           },
           {
             "name": "sort_by",
@@ -2002,7 +1979,8 @@
                 "description",
                 "created_at"
               ]
-            }
+            },
+            "required": false
           },
           {
             "name": "sort_dir",
@@ -2014,7 +1992,8 @@
                 "asc",
                 "desc"
               ]
-            }
+            },
+            "required": false
           }
         ],
         "responses": {
@@ -2536,7 +2515,8 @@
             "schema": {
               "type": "string",
               "format": "date"
-            }
+            },
+            "required": false
           },
           {
             "name": "date_to",
@@ -2545,7 +2525,8 @@
             "schema": {
               "type": "string",
               "format": "date"
-            }
+            },
+            "required": false
           },
           {
             "name": "search",
@@ -2554,7 +2535,8 @@
             "schema": {
               "type": "string",
               "maxLength": 100
-            }
+            },
+            "required": false
           },
           {
             "name": "account_id",
@@ -2890,95 +2872,7 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {
-                  "entity_type": {
-                    "$ref": "../../components/entity_type/req_entity_type.yaml"
-                  },
-                  "legal_name": {
-                    "$ref": "../../components/legal_name/req_legal_name.yaml"
-                  },
-                  "other_name": {
-                    "$ref": "../../components/other_name/req_other_name.yaml"
-                  },
-                  "reg_no_type": {
-                    "$ref": "../../components/reg_no_type/req_reg_no_type.yaml"
-                  },
-                  "reg_no": {
-                    "$ref": "../../components/reg_no/req_reg_no.yaml"
-                  },
-                  "old_reg_no": {
-                    "$ref": "../../components/old_reg_no/req_old_reg_no.yaml"
-                  },
-                  "tax_id_no": {
-                    "$ref": "../../components/tax_id_no/req_tax_id_no.yaml"
-                  },
-                  "sst_reg_no": {
-                    "$ref": "../../components/sst_reg_no/req_sst_reg_no.yaml"
-                  },
-                  "contact_persons": {
-                    "$ref": "../../components/contacts/req_contact_persons.yaml"
-                  },
-                  "group_ids": {
-                    "$ref": "../../components/group_ids/req_group_ids.yaml"
-                  },
-                  "price_level_id": {
-                    "$ref": "../../components/price_level_id/req_price_level_id.yaml"
-                  },
-                  "email": {
-                    "$ref": "../../components/email/req_email.yaml"
-                  },
-                  "phone_no": {
-                    "$ref": "../../components/phone_no/req_phone_no.yaml"
-                  },
-                  "types": {
-                    "$ref": "../../components/types/req_types.yaml"
-                  },
-                  "tag_ids": {
-                    "$ref": "../../components/tag_ids/req_tag_ids.yaml"
-                  },
-                  "default_currency_code": {
-                    "$ref": "../../components/default_currency_code/req_default_currency_code.yaml"
-                  },
-                  "default_term_id": {
-                    "$ref": "../../components/default_term_id/req_default_term_id.yaml"
-                  },
-                  "default_income_account_id": {
-                    "$ref": "../../components/default_income_account_id/req_default_income_account_id.yaml"
-                  },
-                  "default_expense_account_id": {
-                    "$ref": "../../components/default_expense_account_id/req_default_expense_account_id.yaml"
-                  },
-                  "fields": {
-                    "$ref": "../../components/fields/req_fields.yaml"
-                  },
-                  "remarks": {
-                    "$ref": "../../components/remarks/req_remarks.yaml"
-                  },
-                  "receive_monthly_statement": {
-                    "$ref": "../../components/receive_montly_statement/req_receive_montly_statement.yaml"
-                  },
-                  "receive_invoice_reminder": {
-                    "$ref": "../../components/receive_invoice_reminder/req_receive_invoice_reminder.yaml"
-                  },
-                  "key": {
-                    "$ref": "../../components/key/req_key.yaml"
-                  },
-                  "addresses": {
-                    "$ref": "../../components/addresses/req_addresses.yaml"
-                  },
-                  "receivable_account_id": {
-                    "$ref": "../../components/receivable_account_id/req_receivable_account_id.yaml"
-                  },
-                  "debtor_credit_limit": {
-                    "$ref": "../../components/debtor_credit_limit/req_debtor_credit_limit.yaml"
-                  },
-                  "payable_account_id": {
-                    "$ref": "../../components/payable_account_id/req_payable_account_id.yaml"
-                  },
-                  "files": {
-                    "$ref": "../../components/files/req_files.yaml"
-                  }
-                },
+                "properties": {},
                 "required": [
                   "entity_type",
                   "legal_name",
@@ -3020,7 +2914,8 @@
             "description": "Search by group ID.",
             "schema": {
               "type": "integer"
-            }
+            },
+            "required": false
           },
           {
             "name": "search",
@@ -3029,7 +2924,8 @@
             "schema": {
               "type": "string",
               "maxLength": 100
-            }
+            },
+            "required": false
           },
           {
             "name": "page",
@@ -3039,7 +2935,8 @@
               "type": "integer",
               "minimum": 1,
               "default": 1
-            }
+            },
+            "required": false
           },
           {
             "name": "page_size",
@@ -3050,7 +2947,8 @@
               "minimum": 1,
               "maximum": 100,
               "default": 30
-            }
+            },
+            "required": false
           },
           {
             "name": "sort_by",
@@ -3064,7 +2962,8 @@
                 "payable",
                 "created_at"
               ]
-            }
+            },
+            "required": false
           },
           {
             "name": "sort_dir",
@@ -3076,7 +2975,8 @@
                 "asc",
                 "desc"
               ]
-            }
+            },
+            "required": false
           },
           {
             "name": "status",
@@ -3091,7 +2991,8 @@
                 "ACTIVE",
                 "INACTIVE"
               ]
-            }
+            },
+            "required": false
           },
           {
             "name": "is_myinvois_ready",
@@ -3100,7 +3001,8 @@
             "schema": {
               "type": "boolean",
               "nullable": true
-            }
+            },
+            "required": false
           },
           {
             "name": "type",
@@ -3113,7 +3015,8 @@
                 "supplier",
                 "employee"
               ]
-            }
+            },
+            "required": false
           }
         ],
         "responses": {
@@ -3193,95 +3096,7 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {
-                  "entity_type": {
-                    "$ref": "../../components/entity_type/req_entity_type.yaml"
-                  },
-                  "legal_name": {
-                    "$ref": "../../components/legal_name/req_legal_name.yaml"
-                  },
-                  "other_name": {
-                    "$ref": "../../components/other_name/req_other_name.yaml"
-                  },
-                  "reg_no_type": {
-                    "$ref": "../../components/reg_no_type/req_reg_no_type.yaml"
-                  },
-                  "reg_no": {
-                    "$ref": "../../components/reg_no/req_reg_no.yaml"
-                  },
-                  "old_reg_no": {
-                    "$ref": "../../components/old_reg_no/req_old_reg_no.yaml"
-                  },
-                  "tax_id_no": {
-                    "$ref": "../../components/tax_id_no/req_tax_id_no.yaml"
-                  },
-                  "sst_reg_no": {
-                    "$ref": "../../components/sst_reg_no/req_sst_reg_no.yaml"
-                  },
-                  "contact_persons": {
-                    "$ref": "../../components/contacts/req_contact_persons.yaml"
-                  },
-                  "group_ids": {
-                    "$ref": "../../components/group_ids/req_group_ids.yaml"
-                  },
-                  "price_level_id": {
-                    "$ref": "../../components/price_level_id/req_price_level_id.yaml"
-                  },
-                  "email": {
-                    "$ref": "../../components/email/req_email.yaml"
-                  },
-                  "phone_no": {
-                    "$ref": "../../components/phone_no/req_phone_no.yaml"
-                  },
-                  "types": {
-                    "$ref": "../../components/types/req_types.yaml"
-                  },
-                  "tag_ids": {
-                    "$ref": "../../components/tag_ids/req_tag_ids.yaml"
-                  },
-                  "default_currency_code": {
-                    "$ref": "../../components/default_currency_code/req_default_currency_code.yaml"
-                  },
-                  "default_term_id": {
-                    "$ref": "../../components/default_term_id/req_default_term_id.yaml"
-                  },
-                  "default_income_account_id": {
-                    "$ref": "../../components/default_income_account_id/req_default_income_account_id.yaml"
-                  },
-                  "default_expense_account_id": {
-                    "$ref": "../../components/default_expense_account_id/req_default_expense_account_id.yaml"
-                  },
-                  "fields": {
-                    "$ref": "../../components/fields/req_fields.yaml"
-                  },
-                  "remarks": {
-                    "$ref": "../../components/remarks/req_remarks.yaml"
-                  },
-                  "receive_monthly_statement": {
-                    "$ref": "../../components/receive_montly_statement/req_receive_montly_statement.yaml"
-                  },
-                  "receive_invoice_reminder": {
-                    "$ref": "../../components/receive_invoice_reminder/req_receive_invoice_reminder.yaml"
-                  },
-                  "key": {
-                    "$ref": "../../components/key/req_key.yaml"
-                  },
-                  "addresses": {
-                    "$ref": "../../components/addresses/req_addresses.yaml"
-                  },
-                  "receivable_account_id": {
-                    "$ref": "../../components/receivable_account_id/req_receivable_account_id.yaml"
-                  },
-                  "debtor_credit_limit": {
-                    "$ref": "../../components/debtor_credit_limit/req_debtor_credit_limit.yaml"
-                  },
-                  "payable_account_id": {
-                    "$ref": "../../components/payable_account_id/req_payable_account_id.yaml"
-                  },
-                  "files": {
-                    "$ref": "../../components/files/req_files.yaml"
-                  }
-                },
+                "properties": {},
                 "required": [
                   "entity_type",
                   "legal_name",
@@ -3331,11 +3146,7 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {
-                  "is_archived": {
-                    "$ref": "../../components/is_archived/req_is_archived.yaml"
-                  }
-                },
+                "properties": {},
                 "required": [
                   "is_archived"
                 ]
@@ -3411,68 +3222,7 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {
-                  "name": {
-                    "$ref": "../../components/products/req_product_name.yaml"
-                  },
-                  "sku": {
-                    "$ref": "../../components/sku/req_sku.yaml"
-                  },
-                  "classification_code": {
-                    "$ref": "../../components/classification_code/req_classification_code.yaml"
-                  },
-                  "is_selling": {
-                    "$ref": "../../components/is_selling/req_is_selling.yaml"
-                  },
-                  "sale_description": {
-                    "$ref": "../../components/sale_description/req_sale_description.yaml"
-                  },
-                  "sale_account_id": {
-                    "$ref": "../../components/sale_account_id/req_sale_account_id.yaml"
-                  },
-                  "sale_tax_code_id": {
-                    "$ref": "../../components/sale_tax_code_id/req_sale_tax_code_id.yaml"
-                  },
-                  "is_buying": {
-                    "$ref": "../../components/is_buying/req_is_buying.yaml"
-                  },
-                  "purchase_description": {
-                    "$ref": "../../components/purchase_description/req_purchase_description.yaml"
-                  },
-                  "purchase_account_id": {
-                    "$ref": "../../components/purchase_account_id/req_purchase_account_id.yaml"
-                  },
-                  "purchase_tax_code_id": {
-                    "$ref": "../../components/purchase_tax_code_id/req_purchase_tax_code_id.yaml"
-                  },
-                  "track_inventory": {
-                    "$ref": "../../components/track_inventory/req_track_inventory.yaml"
-                  },
-                  "inventory_account_id": {
-                    "$ref": "../../components/inventory_account_id/req_inventory_account_id.yaml"
-                  },
-                  "quantity_low_alert": {
-                    "$ref": "../../components/quantity_low_alert/req_quantity_low_alert.yaml"
-                  },
-                  "bin_location": {
-                    "$ref": "../../components/bin_location/req_bin_location.yaml"
-                  },
-                  "remarks": {
-                    "$ref": "../../components/remarks/req_remarks.yaml"
-                  },
-                  "units": {
-                    "$ref": "../units/create.yaml"
-                  },
-                  "group_ids": {
-                    "$ref": "../../components/group_ids/req_group_ids.yaml"
-                  },
-                  "sale_prices": {
-                    "$ref": "../../components/sale_prices/req_sale_prices.yaml"
-                  },
-                  "purchase_prices": {
-                    "$ref": "../../components/purchase_prices/req_purchase_prices.yaml"
-                  }
-                },
+                "properties": {},
                 "required": [
                   "name",
                   "is_selling",
@@ -3517,7 +3267,8 @@
             "schema": {
               "type": "string",
               "maxLength": 60
-            }
+            },
+            "required": false
           },
           {
             "name": "stock_level",
@@ -3530,7 +3281,8 @@
                 "no_stock",
                 "low_stock"
               ]
-            }
+            },
+            "required": false
           },
           {
             "name": "mode",
@@ -3542,7 +3294,8 @@
                 "sale",
                 "purchase"
               ]
-            }
+            },
+            "required": false
           },
           {
             "name": "type",
@@ -3554,7 +3307,8 @@
                 "product",
                 "bundle"
               ]
-            }
+            },
+            "required": false
           },
           {
             "name": "include_archived",
@@ -3562,7 +3316,8 @@
             "description": "Whether to include soft deleted products",
             "schema": {
               "type": "boolean"
-            }
+            },
+            "required": false
           },
           {
             "name": "page",
@@ -3572,7 +3327,8 @@
               "type": "integer",
               "minimum": 1,
               "default": 1
-            }
+            },
+            "required": false
           },
           {
             "name": "page_size",
@@ -3583,7 +3339,8 @@
               "minimum": 1,
               "maximum": 100,
               "default": 30
-            }
+            },
+            "required": false
           },
           {
             "name": "sort_by",
@@ -3598,7 +3355,8 @@
                 "purchase_price",
                 "quantity"
               ]
-            }
+            },
+            "required": false
           },
           {
             "name": "sort_dir",
@@ -3610,7 +3368,8 @@
                 "asc",
                 "desc"
               ]
-            }
+            },
+            "required": false
           }
         ],
         "responses": {
@@ -3690,68 +3449,7 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {
-                  "name": {
-                    "$ref": "../../components/products/req_product_name.yaml"
-                  },
-                  "sku": {
-                    "$ref": "../../components/sku/req_sku.yaml"
-                  },
-                  "classification_code": {
-                    "$ref": "../../components/classification_code/req_classification_code.yaml"
-                  },
-                  "is_selling": {
-                    "$ref": "../../components/is_selling/req_is_selling.yaml"
-                  },
-                  "sale_description": {
-                    "$ref": "../../components/sale_description/req_sale_description.yaml"
-                  },
-                  "sale_account_id": {
-                    "$ref": "../../components/sale_account_id/req_sale_account_id.yaml"
-                  },
-                  "sale_tax_code_id": {
-                    "$ref": "../../components/sale_tax_code_id/req_sale_tax_code_id.yaml"
-                  },
-                  "is_buying": {
-                    "$ref": "../../components/is_buying/req_is_buying.yaml"
-                  },
-                  "purchase_description": {
-                    "$ref": "../../components/purchase_description/req_purchase_description.yaml"
-                  },
-                  "purchase_account_id": {
-                    "$ref": "../../components/purchase_account_id/req_purchase_account_id.yaml"
-                  },
-                  "purchase_tax_code_id": {
-                    "$ref": "../../components/purchase_tax_code_id/req_purchase_tax_code_id.yaml"
-                  },
-                  "track_inventory": {
-                    "$ref": "../../components/track_inventory/req_track_inventory.yaml"
-                  },
-                  "inventory_account_id": {
-                    "$ref": "../../components/inventory_account_id/req_inventory_account_id.yaml"
-                  },
-                  "quantity_low_alert": {
-                    "$ref": "../../components/quantity_low_alert/req_quantity_low_alert.yaml"
-                  },
-                  "bin_location": {
-                    "$ref": "../../components/bin_location/req_bin_location.yaml"
-                  },
-                  "remarks": {
-                    "$ref": "../../components/remarks/req_remarks.yaml"
-                  },
-                  "units": {
-                    "$ref": "../units/update.yaml"
-                  },
-                  "group_ids": {
-                    "$ref": "../../components/group_ids/req_group_ids.yaml"
-                  },
-                  "sale_prices": {
-                    "$ref": "../../components/sale_prices/req_sale_prices.yaml"
-                  },
-                  "purchase_prices": {
-                    "$ref": "../../components/purchase_prices/req_purchase_prices.yaml"
-                  }
-                },
+                "properties": {},
                 "required": [
                   "name",
                   "is_selling",
@@ -3803,11 +3501,7 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {
-                  "is_archived": {
-                    "$ref": "../../components/is_archived/req_is_archived.yaml"
-                  }
-                },
+                "properties": {},
                 "required": [
                   "is_archived"
                 ]
@@ -3888,71 +3582,7 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {
-                  "contact_id": {
-                    "$ref": "../../components/supplier_id/req_txn_supplier_id.yaml"
-                  },
-                  "number": {
-                    "$ref": "../../../../../shared/requests/components/number/create.yaml"
-                  },
-                  "number2": {
-                    "$ref": "../../components/number2/req_txn_number2.yaml"
-                  },
-                  "date": {
-                    "$ref": "../../components/date/req_date.yaml"
-                  },
-                  "currency_code": {
-                    "$ref": "../../components/currency_code/req_currency_code.yaml"
-                  },
-                  "exchange_rate": {
-                    "$ref": "../../components/exchange_rate/req_exchange_rate.yaml"
-                  },
-                  "billing_party": {
-                    "$ref": "../../components/bills/req_billing_party.yaml"
-                  },
-                  "show_shipping": {
-                    "$ref": "../../components/show_shipping/req_show_shipping.yaml"
-                  },
-                  "shipping_party": {
-                    "$ref": "../../components/shipping_party/req_shipping_party.yaml"
-                  },
-                  "shipping_info": {
-                    "$ref": "../../components/shipping_info/req_shipping_info.yaml"
-                  },
-                  "tag_ids": {
-                    "$ref": "../../components/tag_ids/req_tag_ids.yaml"
-                  },
-                  "term_id": {
-                    "$ref": "../../components/term_id/req_term_id.yaml"
-                  },
-                  "title": {
-                    "$ref": "../../components/title/req_title.yaml"
-                  },
-                  "description": {
-                    "$ref": "../../components/description/req_description.yaml"
-                  },
-                  "remarks": {
-                    "$ref": "../../components/remarks/req_remarks.yaml"
-                  },
-                  "tax_mode": {
-                    "$ref": "../../components/tax_mode/req_tax_mode.yaml"
-                  },
-                  "form_items": {
-                    "$ref": "../../components/form_items_normal_without_transfer/req_form_items_normal_without_transfer.yaml"
-                  },
-                  "status": {
-                    "$ref": "../../components/status_create/req_status_create.yaml"
-                  },
-                  "email": {
-                    "$ref": "../../components/email/req_email.yaml"
-                  },
-                  "files": {
-                    "$ref": "../../components/files/req_files.yaml"
-                  },
-                  "fields": {
-                    "$ref": "../../../../../shared/requests/schemas/transactions/fields.yaml"
-                  }
-                },
+                "properties": {},
                 "required": [
                   "contact_id",
                   "date",
@@ -3994,16 +3624,8 @@
             "schema": {
               "type": "string",
               "maxLength": 100
-            }
-          },
-          {
-            "name": "custom_search",
-            "in": "query",
-            "description": "Search for keywords within custom fields, use format `DD/MM/YYYY` for a date.",
-            "schema": {
-              "type": "string",
-              "maxLength": 100
-            }
+            },
+            "required": false
           },
           {
             "name": "contact_id",
@@ -4011,7 +3633,8 @@
             "description": "Search by contact ID.",
             "schema": {
               "type": "integer"
-            }
+            },
+            "required": false
           },
           {
             "name": "date_from",
@@ -4020,7 +3643,8 @@
             "schema": {
               "type": "string",
               "format": "date"
-            }
+            },
+            "required": false
           },
           {
             "name": "date_to",
@@ -4029,7 +3653,8 @@
             "schema": {
               "type": "string",
               "format": "date"
-            }
+            },
+            "required": false
           },
           {
             "name": "status",
@@ -4060,22 +3685,8 @@
                 "OPENED",
                 "VIEWED"
               ]
-            }
-          },
-          {
-            "name": "transfer_status",
-            "in": "query",
-            "description": "Search by transfer status.",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "ALL",
-                "OUTSTANDING",
-                "NOT_TRANSFERRED",
-                "PARTIAL_TRANSFERRED",
-                "TRANSFERRED"
-              ]
-            }
+            },
+            "required": false
           },
           {
             "name": "page",
@@ -4085,7 +3696,8 @@
               "type": "integer",
               "minimum": 1,
               "default": 1
-            }
+            },
+            "required": false
           },
           {
             "name": "page_size",
@@ -4096,7 +3708,8 @@
               "minimum": 1,
               "maximum": 100,
               "default": 30
-            }
+            },
+            "required": false
           },
           {
             "name": "sort_by",
@@ -4114,7 +3727,8 @@
                 "amount",
                 "created_at"
               ]
-            }
+            },
+            "required": false
           },
           {
             "name": "sort_dir",
@@ -4126,7 +3740,8 @@
                 "asc",
                 "desc"
               ]
-            }
+            },
+            "required": false
           }
         ],
         "responses": {
@@ -4208,68 +3823,7 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {
-                  "contact_id": {
-                    "$ref": "../../components/supplier_id/req_txn_supplier_id.yaml"
-                  },
-                  "number": {
-                    "$ref": "../../../../../shared/requests/components/number/update.yaml"
-                  },
-                  "number2": {
-                    "$ref": "../../components/number2/req_txn_number2.yaml"
-                  },
-                  "date": {
-                    "$ref": "../../components/date/req_date.yaml"
-                  },
-                  "currency_code": {
-                    "$ref": "../../components/currency_code/req_currency_code.yaml"
-                  },
-                  "exchange_rate": {
-                    "$ref": "../../components/exchange_rate/req_exchange_rate.yaml"
-                  },
-                  "billing_party": {
-                    "$ref": "../../components/bills/req_billing_party.yaml"
-                  },
-                  "show_shipping": {
-                    "$ref": "../../components/show_shipping/req_show_shipping.yaml"
-                  },
-                  "shipping_party": {
-                    "$ref": "../../components/shipping_party/req_shipping_party.yaml"
-                  },
-                  "shipping_info": {
-                    "$ref": "../../components/shipping_info/req_shipping_info.yaml"
-                  },
-                  "tag_ids": {
-                    "$ref": "../../components/tag_ids/req_tag_ids.yaml"
-                  },
-                  "term_id": {
-                    "$ref": "../../components/term_id/req_term_id.yaml"
-                  },
-                  "title": {
-                    "$ref": "../../components/title/req_title.yaml"
-                  },
-                  "description": {
-                    "$ref": "../../components/description/req_description.yaml"
-                  },
-                  "remarks": {
-                    "$ref": "../../components/remarks/req_remarks.yaml"
-                  },
-                  "tax_mode": {
-                    "$ref": "../../components/tax_mode/req_tax_mode.yaml"
-                  },
-                  "form_items": {
-                    "$ref": "../../components/form_items_normal_without_transfer/req_form_items_normal_without_transfer.yaml"
-                  },
-                  "email": {
-                    "$ref": "../../components/email/req_email.yaml"
-                  },
-                  "files": {
-                    "$ref": "../../components/files/req_files.yaml"
-                  },
-                  "fields": {
-                    "$ref": "../../../../../shared/requests/schemas/transactions/fields.yaml"
-                  }
-                },
+                "properties": {},
                 "required": [
                   "contact_id",
                   "number",
@@ -4420,80 +3974,7 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {
-                  "payment_mode": {
-                    "$ref": "../../components/payments/req_txn_payment_mode_purchases.yaml"
-                  },
-                  "contact_id": {
-                    "$ref": "../../components/bills/req_txn_id_bill.yaml"
-                  },
-                  "contact2_id": {
-                    "$ref": "../../components/supplier2_id/req_txn_supplier2_id.yaml"
-                  },
-                  "number": {
-                    "$ref": "../../../../../shared/requests/components/number/create.yaml"
-                  },
-                  "number2": {
-                    "$ref": "../../components/number2/req_txn_number2.yaml"
-                  },
-                  "date": {
-                    "$ref": "../../components/date/req_date.yaml"
-                  },
-                  "term_id": {
-                    "$ref": "../../components/term_id/req_term_id.yaml"
-                  },
-                  "due_date": {
-                    "$ref": "../../components/due_date/req_due_date.yaml"
-                  },
-                  "currency_code": {
-                    "$ref": "../../components/currency_code/req_currency_code.yaml"
-                  },
-                  "exchange_rate": {
-                    "$ref": "../../components/exchange_rate/req_exchange_rate.yaml"
-                  },
-                  "billing_party": {
-                    "$ref": "../../components/bills/req_billing_party.yaml"
-                  },
-                  "tag_ids": {
-                    "$ref": "../../components/tag_ids/req_tag_ids.yaml"
-                  },
-                  "description": {
-                    "$ref": "../../components/description/req_description.yaml"
-                  },
-                  "remarks": {
-                    "$ref": "../../components/remarks/req_remarks.yaml"
-                  },
-                  "tax_mode": {
-                    "$ref": "../../components/tax_mode/req_tax_mode.yaml"
-                  },
-                  "form_items": {
-                    "$ref": "../../components/form_items_myinvois/req_form_items_myinvois.yaml"
-                  },
-                  "deposit_items": {
-                    "$ref": "../../components/bills/req_deposit_items_bill.yaml"
-                  },
-                  "status": {
-                    "$ref": "../../components/status_create/req_status_create.yaml"
-                  },
-                  "files": {
-                    "$ref": "../../components/files/req_files.yaml"
-                  },
-                  "fields": {
-                    "$ref": "../../../../../shared/requests/schemas/transactions/fields.yaml"
-                  },
-                  "customs_form_no": {
-                    "$ref": "../../components/customs_form_no/req_customs_form_no.yaml"
-                  },
-                  "customs_k2_form_no": {
-                    "$ref": "../../components/customs_k2_form_no/req_customs_k2_form_no.yaml"
-                  },
-                  "incoterms": {
-                    "$ref": "../../components/incoterms/req_incoterms.yaml"
-                  },
-                  "myinvois_action": {
-                    "$ref": "../myinvois_action/create.yaml"
-                  }
-                },
+                "properties": {},
                 "required": [
                   "payment_mode",
                   "contact_id",
@@ -4540,7 +4021,8 @@
                 "OUTSTANDING",
                 "OVERDUE"
               ]
-            }
+            },
+            "required": false
           },
           {
             "name": "date_from",
@@ -4549,7 +4031,8 @@
             "schema": {
               "type": "string",
               "format": "date"
-            }
+            },
+            "required": false
           },
           {
             "name": "date_to",
@@ -4558,7 +4041,8 @@
             "schema": {
               "type": "string",
               "format": "date"
-            }
+            },
+            "required": false
           },
           {
             "name": "search",
@@ -4567,16 +4051,8 @@
             "schema": {
               "type": "string",
               "maxLength": 100
-            }
-          },
-          {
-            "name": "custom_search",
-            "in": "query",
-            "description": "Search for keywords within custom fields, use format `DD/MM/YYYY` for a date.",
-            "schema": {
-              "type": "string",
-              "maxLength": 100
-            }
+            },
+            "required": false
           },
           {
             "name": "contact_id",
@@ -4584,7 +4060,8 @@
             "description": "Search by contact ID.",
             "schema": {
               "type": "integer"
-            }
+            },
+            "required": false
           },
           {
             "name": "payment_mode",
@@ -4597,7 +4074,8 @@
                 "cash",
                 "claim"
               ]
-            }
+            },
+            "required": false
           },
           {
             "name": "status",
@@ -4631,7 +4109,8 @@
                 "balance",
                 "created_at"
               ]
-            }
+            },
+            "required": false
           },
           {
             "name": "sort_dir",
@@ -4643,7 +4122,8 @@
                 "asc",
                 "desc"
               ]
-            }
+            },
+            "required": false
           },
           {
             "name": "page",
@@ -4653,7 +4133,8 @@
               "type": "integer",
               "minimum": 1,
               "default": 1
-            }
+            },
+            "required": false
           },
           {
             "name": "page_size",
@@ -4664,7 +4145,8 @@
               "minimum": 1,
               "maximum": 100,
               "default": 30
-            }
+            },
+            "required": false
           }
         ],
         "responses": {
@@ -4746,77 +4228,7 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {
-                  "payment_mode": {
-                    "$ref": "../../components/payments/req_txn_payment_mode_purchases.yaml"
-                  },
-                  "contact_id": {
-                    "$ref": "../../components/bills/req_txn_id_bill.yaml"
-                  },
-                  "contact2_id": {
-                    "$ref": "../../components/supplier2_id/req_txn_supplier2_id.yaml"
-                  },
-                  "number": {
-                    "$ref": "../../../../../shared/requests/components/number/update.yaml"
-                  },
-                  "number2": {
-                    "$ref": "../../components/number2/req_txn_number2.yaml"
-                  },
-                  "date": {
-                    "$ref": "../../components/date/req_date.yaml"
-                  },
-                  "term_id": {
-                    "$ref": "../../components/term_id/req_term_id.yaml"
-                  },
-                  "due_date": {
-                    "$ref": "../../components/due_date/req_due_date.yaml"
-                  },
-                  "currency_code": {
-                    "$ref": "../../components/currency_code/req_currency_code.yaml"
-                  },
-                  "exchange_rate": {
-                    "$ref": "../../components/exchange_rate/req_exchange_rate.yaml"
-                  },
-                  "billing_party": {
-                    "$ref": "../../components/bills/req_billing_party.yaml"
-                  },
-                  "tag_ids": {
-                    "$ref": "../../components/tag_ids/req_tag_ids.yaml"
-                  },
-                  "description": {
-                    "$ref": "../../components/description/req_description.yaml"
-                  },
-                  "remarks": {
-                    "$ref": "../../components/remarks/req_remarks.yaml"
-                  },
-                  "tax_mode": {
-                    "$ref": "../../components/tax_mode/req_tax_mode.yaml"
-                  },
-                  "form_items": {
-                    "$ref": "../../components/form_items_myinvois/req_form_items_myinvois.yaml"
-                  },
-                  "deposit_items": {
-                    "$ref": "../../components/bills/req_deposit_items_bill.yaml"
-                  },
-                  "files": {
-                    "$ref": "../../components/files/req_files.yaml"
-                  },
-                  "fields": {
-                    "$ref": "../../../../../shared/requests/schemas/transactions/fields.yaml"
-                  },
-                  "customs_form_no": {
-                    "$ref": "../../components/customs_form_no/req_customs_form_no.yaml"
-                  },
-                  "customs_k2_form_no": {
-                    "$ref": "../../components/customs_k2_form_no/req_customs_k2_form_no.yaml"
-                  },
-                  "incoterms": {
-                    "$ref": "../../components/incoterms/req_incoterms.yaml"
-                  },
-                  "myinvois_action": {
-                    "$ref": "../myinvois_action/update.yaml"
-                  }
-                },
+                "properties": {},
                 "required": [
                   "payment_mode",
                   "contact_id",
@@ -4968,56 +4380,7 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {
-                  "contact_id": {
-                    "$ref": "../../components/supplier_employee_id/req_txn_supplier_employee_id.yaml"
-                  },
-                  "number": {
-                    "$ref": "../../../../../shared/requests/components/number/create.yaml"
-                  },
-                  "number2": {
-                    "$ref": "../../components/number2/req_txn_number2.yaml"
-                  },
-                  "date": {
-                    "$ref": "../../components/date/req_date.yaml"
-                  },
-                  "currency_code": {
-                    "$ref": "../../components/currency_code/req_currency_code.yaml"
-                  },
-                  "exchange_rate": {
-                    "$ref": "../../components/exchange_rate/req_exchange_rate.yaml"
-                  },
-                  "amount": {
-                    "$ref": "../../components/payments/req_payment_amount.yaml"
-                  },
-                  "tag_ids": {
-                    "$ref": "../../components/tag_ids/req_tag_ids.yaml"
-                  },
-                  "description": {
-                    "$ref": "../../components/description/req_description.yaml"
-                  },
-                  "remarks": {
-                    "$ref": "../../components/remarks/req_remarks.yaml"
-                  },
-                  "link_items": {
-                    "$ref": "../../components/link_items/req_link_items.yaml"
-                  },
-                  "deposit_items": {
-                    "$ref": "../../components/deposit_items/req_deposit_items.yaml"
-                  },
-                  "status": {
-                    "$ref": "../../components/status_create/req_status_create.yaml"
-                  },
-                  "email": {
-                    "$ref": "../../components/email/req_email.yaml"
-                  },
-                  "files": {
-                    "$ref": "../../components/files/req_files.yaml"
-                  },
-                  "fields": {
-                    "$ref": "../../../../../shared/requests/schemas/transactions/fields.yaml"
-                  }
-                },
+                "properties": {},
                 "required": [
                   "contact_id",
                   "date",
@@ -5059,16 +4422,8 @@
             "schema": {
               "type": "string",
               "maxLength": 100
-            }
-          },
-          {
-            "name": "custom_search",
-            "in": "query",
-            "description": "Search for keywords within custom fields, use format `DD/MM/YYYY` for a date.",
-            "schema": {
-              "type": "string",
-              "maxLength": 100
-            }
+            },
+            "required": false
           },
           {
             "name": "contact_id",
@@ -5076,7 +4431,8 @@
             "description": "Search by contact ID.",
             "schema": {
               "type": "integer"
-            }
+            },
+            "required": false
           },
           {
             "name": "date_from",
@@ -5085,7 +4441,8 @@
             "schema": {
               "type": "string",
               "format": "date"
-            }
+            },
+            "required": false
           },
           {
             "name": "date_to",
@@ -5094,7 +4451,8 @@
             "schema": {
               "type": "string",
               "format": "date"
-            }
+            },
+            "required": false
           },
           {
             "name": "status",
@@ -5121,7 +4479,8 @@
                 "paid",
                 "outstanding"
               ]
-            }
+            },
+            "required": false
           },
           {
             "name": "email_status",
@@ -5137,7 +4496,8 @@
                 "OPENED",
                 "VIEWED"
               ]
-            }
+            },
+            "required": false
           },
           {
             "name": "page",
@@ -5147,7 +4507,8 @@
               "type": "integer",
               "minimum": 1,
               "default": 1
-            }
+            },
+            "required": false
           },
           {
             "name": "page_size",
@@ -5158,7 +4519,8 @@
               "minimum": 1,
               "maximum": 100,
               "default": 30
-            }
+            },
+            "required": false
           },
           {
             "name": "sort_by",
@@ -5176,7 +4538,8 @@
                 "balance",
                 "created_at"
               ]
-            }
+            },
+            "required": false
           },
           {
             "name": "sort_dir",
@@ -5188,7 +4551,8 @@
                 "asc",
                 "desc"
               ]
-            }
+            },
+            "required": false
           },
           {
             "name": "account_id",
@@ -5196,7 +4560,8 @@
             "description": "Filter by accounts you've paid from.",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": false
           }
         ],
         "responses": {
@@ -5278,53 +4643,7 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {
-                  "contact_id": {
-                    "$ref": "../../components/supplier_employee_id/req_txn_supplier_employee_id.yaml"
-                  },
-                  "number": {
-                    "$ref": "../../../../../shared/requests/components/number/update.yaml"
-                  },
-                  "number2": {
-                    "$ref": "../../components/number2/req_txn_number2.yaml"
-                  },
-                  "date": {
-                    "$ref": "../../components/date/req_date.yaml"
-                  },
-                  "currency_code": {
-                    "$ref": "../../components/currency_code/req_currency_code.yaml"
-                  },
-                  "exchange_rate": {
-                    "$ref": "../../components/exchange_rate/req_exchange_rate.yaml"
-                  },
-                  "amount": {
-                    "$ref": "../../components/payments/req_payment_amount.yaml"
-                  },
-                  "tag_ids": {
-                    "$ref": "../../components/tag_ids/req_tag_ids.yaml"
-                  },
-                  "description": {
-                    "$ref": "../../components/description/req_description.yaml"
-                  },
-                  "remarks": {
-                    "$ref": "../../components/remarks/req_remarks.yaml"
-                  },
-                  "link_items": {
-                    "$ref": "../../components/link_items/req_link_items.yaml"
-                  },
-                  "deposit_items": {
-                    "$ref": "../../components/deposit_items/req_deposit_items.yaml"
-                  },
-                  "email": {
-                    "$ref": "../../components/email/req_email.yaml"
-                  },
-                  "files": {
-                    "$ref": "../../components/files/req_files.yaml"
-                  },
-                  "fields": {
-                    "$ref": "../../../../../shared/requests/schemas/transactions/fields.yaml"
-                  }
-                },
+                "properties": {},
                 "required": [
                   "contact_id",
                   "date",
@@ -5475,71 +4794,7 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {
-                  "contact_id": {
-                    "$ref": "../../components/customer_id/req_txn_customer_id.yaml"
-                  },
-                  "number": {
-                    "$ref": "../../../../../shared/requests/components/number/create.yaml"
-                  },
-                  "number2": {
-                    "$ref": "../../components/number2/req_txn_number2.yaml"
-                  },
-                  "date": {
-                    "$ref": "../../components/date/req_date.yaml"
-                  },
-                  "currency_code": {
-                    "$ref": "../../components/currency_code/req_currency_code.yaml"
-                  },
-                  "exchange_rate": {
-                    "$ref": "../../components/exchange_rate/req_exchange_rate.yaml"
-                  },
-                  "billing_party": {
-                    "$ref": "../../components/billing_party/req_billing_party.yaml"
-                  },
-                  "show_shipping": {
-                    "$ref": "../../components/show_shipping/req_show_shipping.yaml"
-                  },
-                  "shipping_party": {
-                    "$ref": "../../components/shipping_party/req_shipping_party.yaml"
-                  },
-                  "shipping_info": {
-                    "$ref": "../../components/shipping_info/req_shipping_info.yaml"
-                  },
-                  "tag_ids": {
-                    "$ref": "../../components/tag_ids/req_tag_ids.yaml"
-                  },
-                  "term_id": {
-                    "$ref": "../../components/term_id/req_term_id.yaml"
-                  },
-                  "title": {
-                    "$ref": "../../components/title/req_title.yaml"
-                  },
-                  "description": {
-                    "$ref": "../../components/description/req_description.yaml"
-                  },
-                  "remarks": {
-                    "$ref": "../../components/remarks/req_remarks.yaml"
-                  },
-                  "tax_mode": {
-                    "$ref": "../../components/tax_mode/req_tax_mode.yaml"
-                  },
-                  "form_items": {
-                    "$ref": "../../components/form_items_normal_without_transfer/req_form_items_normal_without_transfer.yaml"
-                  },
-                  "status": {
-                    "$ref": "../../components/status_create/req_status_create.yaml"
-                  },
-                  "email": {
-                    "$ref": "../../components/email/req_email.yaml"
-                  },
-                  "files": {
-                    "$ref": "../../components/files/req_files.yaml"
-                  },
-                  "fields": {
-                    "$ref": "../../../../../shared/requests/schemas/transactions/fields.yaml"
-                  }
-                },
+                "properties": {},
                 "required": [
                   "contact_id",
                   "date",
@@ -5581,16 +4836,8 @@
             "schema": {
               "type": "string",
               "maxLength": 100
-            }
-          },
-          {
-            "name": "custom_search",
-            "in": "query",
-            "description": "Search for keywords within custom fields, use format `DD/MM/YYYY` for a date.",
-            "schema": {
-              "type": "string",
-              "maxLength": 100
-            }
+            },
+            "required": false
           },
           {
             "name": "contact_id",
@@ -5598,7 +4845,8 @@
             "description": "Search by contact ID.",
             "schema": {
               "type": "integer"
-            }
+            },
+            "required": false
           },
           {
             "name": "date_from",
@@ -5607,7 +4855,8 @@
             "schema": {
               "type": "string",
               "format": "date"
-            }
+            },
+            "required": false
           },
           {
             "name": "date_to",
@@ -5616,7 +4865,8 @@
             "schema": {
               "type": "string",
               "format": "date"
-            }
+            },
+            "required": false
           },
           {
             "name": "status",
@@ -5647,21 +4897,8 @@
                 "OPENED",
                 "VIEWED"
               ]
-            }
-          },
-          {
-            "name": "transfer_status",
-            "in": "query",
-            "description": "Search by transfer status.",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "ALL",
-                "NOT_TRANSFERRED",
-                "PARTIAL_TRANSFERRED",
-                "TRANSFERRED"
-              ]
-            }
+            },
+            "required": false
           },
           {
             "name": "page",
@@ -5671,7 +4908,8 @@
               "type": "integer",
               "minimum": 1,
               "default": 1
-            }
+            },
+            "required": false
           },
           {
             "name": "page_size",
@@ -5682,7 +4920,8 @@
               "minimum": 1,
               "maximum": 100,
               "default": 30
-            }
+            },
+            "required": false
           },
           {
             "name": "sort_by",
@@ -5700,7 +4939,8 @@
                 "amount",
                 "created_at"
               ]
-            }
+            },
+            "required": false
           },
           {
             "name": "sort_dir",
@@ -5712,7 +4952,8 @@
                 "asc",
                 "desc"
               ]
-            }
+            },
+            "required": false
           }
         ],
         "responses": {
@@ -5794,68 +5035,7 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {
-                  "contact_id": {
-                    "$ref": "../../components/customer_id/req_txn_customer_id.yaml"
-                  },
-                  "number": {
-                    "$ref": "../../../../../shared/requests/components/number/update.yaml"
-                  },
-                  "number2": {
-                    "$ref": "../../components/number2/req_txn_number2.yaml"
-                  },
-                  "date": {
-                    "$ref": "../../components/date/req_date.yaml"
-                  },
-                  "currency_code": {
-                    "$ref": "../../components/currency_code/req_currency_code.yaml"
-                  },
-                  "exchange_rate": {
-                    "$ref": "../../components/exchange_rate/req_exchange_rate.yaml"
-                  },
-                  "billing_party": {
-                    "$ref": "../../components/billing_party/req_billing_party.yaml"
-                  },
-                  "show_shipping": {
-                    "$ref": "../../components/show_shipping/req_show_shipping.yaml"
-                  },
-                  "shipping_party": {
-                    "$ref": "../../components/shipping_party/req_shipping_party.yaml"
-                  },
-                  "shipping_info": {
-                    "$ref": "../../components/shipping_info/req_shipping_info.yaml"
-                  },
-                  "tag_ids": {
-                    "$ref": "../../components/tag_ids/req_tag_ids.yaml"
-                  },
-                  "term_id": {
-                    "$ref": "../../components/term_id/req_term_id.yaml"
-                  },
-                  "title": {
-                    "$ref": "../../components/title/req_title.yaml"
-                  },
-                  "description": {
-                    "$ref": "../../components/description/req_description.yaml"
-                  },
-                  "remarks": {
-                    "$ref": "../../components/remarks/req_remarks.yaml"
-                  },
-                  "tax_mode": {
-                    "$ref": "../../components/tax_mode/req_tax_mode.yaml"
-                  },
-                  "form_items": {
-                    "$ref": "../../components/form_items_normal_without_transfer/req_form_items_normal_without_transfer.yaml"
-                  },
-                  "email": {
-                    "$ref": "../../components/email/req_email.yaml"
-                  },
-                  "files": {
-                    "$ref": "../../components/files/req_files.yaml"
-                  },
-                  "fields": {
-                    "$ref": "../../../../../shared/requests/schemas/transactions/fields.yaml"
-                  }
-                },
+                "properties": {},
                 "required": [
                   "contact_id",
                   "number",
@@ -6006,71 +5186,7 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {
-                  "contact_id": {
-                    "$ref": "../../components/customer_id/req_txn_customer_id.yaml"
-                  },
-                  "number": {
-                    "$ref": "../../../../../shared/requests/components/number/create.yaml"
-                  },
-                  "number2": {
-                    "$ref": "../../components/number2/req_txn_number2.yaml"
-                  },
-                  "date": {
-                    "$ref": "../../components/date/req_date.yaml"
-                  },
-                  "currency_code": {
-                    "$ref": "../../components/currency_code/req_currency_code.yaml"
-                  },
-                  "exchange_rate": {
-                    "$ref": "../../components/exchange_rate/req_exchange_rate.yaml"
-                  },
-                  "billing_party": {
-                    "$ref": "../../components/billing_party/req_billing_party.yaml"
-                  },
-                  "show_shipping": {
-                    "$ref": "../../components/show_shipping/req_show_shipping.yaml"
-                  },
-                  "shipping_party": {
-                    "$ref": "../../components/shipping_party/req_shipping_party.yaml"
-                  },
-                  "shipping_info": {
-                    "$ref": "../../components/shipping_info/req_shipping_info.yaml"
-                  },
-                  "tag_ids": {
-                    "$ref": "../../components/tag_ids/req_tag_ids.yaml"
-                  },
-                  "term_id": {
-                    "$ref": "../../components/term_id/req_term_id.yaml"
-                  },
-                  "title": {
-                    "$ref": "../../components/title/req_title.yaml"
-                  },
-                  "description": {
-                    "$ref": "../../components/description/req_description.yaml"
-                  },
-                  "remarks": {
-                    "$ref": "../../components/remarks/req_remarks.yaml"
-                  },
-                  "tax_mode": {
-                    "$ref": "../../components/tax_mode/req_tax_mode.yaml"
-                  },
-                  "form_items": {
-                    "$ref": "../../components/form_items_normal/req_form_items_normal.yaml"
-                  },
-                  "status": {
-                    "$ref": "../../components/status_create/req_status_create.yaml"
-                  },
-                  "email": {
-                    "$ref": "../../components/email/req_email.yaml"
-                  },
-                  "files": {
-                    "$ref": "../../components/files/req_files.yaml"
-                  },
-                  "fields": {
-                    "$ref": "../../../../../shared/requests/schemas/transactions/fields.yaml"
-                  }
-                },
+                "properties": {},
                 "required": [
                   "contact_id",
                   "date",
@@ -6112,16 +5228,8 @@
             "schema": {
               "type": "string",
               "maxLength": 100
-            }
-          },
-          {
-            "name": "custom_search",
-            "in": "query",
-            "description": "Search for keywords within custom fields, use format `DD/MM/YYYY` for a date.",
-            "schema": {
-              "type": "string",
-              "maxLength": 100
-            }
+            },
+            "required": false
           },
           {
             "name": "contact_id",
@@ -6129,7 +5237,8 @@
             "description": "Search by contact ID.",
             "schema": {
               "type": "integer"
-            }
+            },
+            "required": false
           },
           {
             "name": "date_from",
@@ -6138,7 +5247,8 @@
             "schema": {
               "type": "string",
               "format": "date"
-            }
+            },
+            "required": false
           },
           {
             "name": "date_to",
@@ -6147,7 +5257,8 @@
             "schema": {
               "type": "string",
               "format": "date"
-            }
+            },
+            "required": false
           },
           {
             "name": "status",
@@ -6178,21 +5289,8 @@
                 "OPENED",
                 "VIEWED"
               ]
-            }
-          },
-          {
-            "name": "transfer_status",
-            "in": "query",
-            "description": "Search by transfer status.",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "ALL",
-                "NOT_TRANSFERRED",
-                "PARTIAL_TRANSFERRED",
-                "TRANSFERRED"
-              ]
-            }
+            },
+            "required": false
           },
           {
             "name": "page",
@@ -6202,7 +5300,8 @@
               "type": "integer",
               "minimum": 1,
               "default": 1
-            }
+            },
+            "required": false
           },
           {
             "name": "page_size",
@@ -6213,7 +5312,8 @@
               "minimum": 1,
               "maximum": 100,
               "default": 30
-            }
+            },
+            "required": false
           },
           {
             "name": "sort_by",
@@ -6231,7 +5331,8 @@
                 "amount",
                 "created_at"
               ]
-            }
+            },
+            "required": false
           },
           {
             "name": "sort_dir",
@@ -6243,7 +5344,8 @@
                 "asc",
                 "desc"
               ]
-            }
+            },
+            "required": false
           }
         ],
         "responses": {
@@ -6325,68 +5427,7 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {
-                  "contact_id": {
-                    "$ref": "../../components/customer_id/req_txn_customer_id.yaml"
-                  },
-                  "number": {
-                    "$ref": "../../../../../shared/requests/components/number/update.yaml"
-                  },
-                  "number2": {
-                    "$ref": "../../components/number2/req_txn_number2.yaml"
-                  },
-                  "date": {
-                    "$ref": "../../components/date/req_date.yaml"
-                  },
-                  "currency_code": {
-                    "$ref": "../../components/currency_code/req_currency_code.yaml"
-                  },
-                  "exchange_rate": {
-                    "$ref": "../../components/exchange_rate/req_exchange_rate.yaml"
-                  },
-                  "billing_party": {
-                    "$ref": "../../components/billing_party/req_billing_party.yaml"
-                  },
-                  "show_shipping": {
-                    "$ref": "../../components/show_shipping/req_show_shipping.yaml"
-                  },
-                  "shipping_party": {
-                    "$ref": "../../components/shipping_party/req_shipping_party.yaml"
-                  },
-                  "shipping_info": {
-                    "$ref": "../../components/shipping_info/req_shipping_info.yaml"
-                  },
-                  "tag_ids": {
-                    "$ref": "../../components/tag_ids/req_tag_ids.yaml"
-                  },
-                  "term_id": {
-                    "$ref": "../../components/term_id/req_term_id.yaml"
-                  },
-                  "title": {
-                    "$ref": "../../components/title/req_title.yaml"
-                  },
-                  "description": {
-                    "$ref": "../../components/description/req_description.yaml"
-                  },
-                  "remarks": {
-                    "$ref": "../../components/remarks/req_remarks.yaml"
-                  },
-                  "tax_mode": {
-                    "$ref": "../../components/tax_mode/req_tax_mode.yaml"
-                  },
-                  "form_items": {
-                    "$ref": "../../components/form_items_normal/req_form_items_normal.yaml"
-                  },
-                  "email": {
-                    "$ref": "../../components/email/req_email.yaml"
-                  },
-                  "files": {
-                    "$ref": "../../components/files/req_files.yaml"
-                  },
-                  "fields": {
-                    "$ref": "../../../../../shared/requests/schemas/transactions/fields.yaml"
-                  }
-                },
+                "properties": {},
                 "required": [
                   "contact_id",
                   "number",
@@ -6537,68 +5578,7 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {
-                  "contact_id": {
-                    "$ref": "../../components/customer_id/req_txn_customer_id.yaml"
-                  },
-                  "number": {
-                    "$ref": "../../../../../shared/requests/components/number/create.yaml"
-                  },
-                  "number2": {
-                    "$ref": "../../components/number2/req_txn_number2.yaml"
-                  },
-                  "date": {
-                    "$ref": "../../components/date/req_date.yaml"
-                  },
-                  "currency_code": {
-                    "$ref": "../../components/currency_code/req_currency_code.yaml"
-                  },
-                  "exchange_rate": {
-                    "$ref": "../../components/exchange_rate/req_exchange_rate.yaml"
-                  },
-                  "billing_party": {
-                    "$ref": "../../components/billing_party/req_billing_party.yaml"
-                  },
-                  "show_shipping": {
-                    "$ref": "../../components/show_shipping/req_show_shipping.yaml"
-                  },
-                  "shipping_party": {
-                    "$ref": "../../components/shipping_party/req_shipping_party.yaml"
-                  },
-                  "shipping_info": {
-                    "$ref": "../../components/shipping_info/req_shipping_info.yaml"
-                  },
-                  "tag_ids": {
-                    "$ref": "../../components/tag_ids/req_tag_ids.yaml"
-                  },
-                  "title": {
-                    "$ref": "../../components/title/req_title.yaml"
-                  },
-                  "description": {
-                    "$ref": "../../components/description/req_description.yaml"
-                  },
-                  "remarks": {
-                    "$ref": "../../components/remarks/req_remarks.yaml"
-                  },
-                  "tax_mode": {
-                    "$ref": "../../components/tax_mode/req_tax_mode.yaml"
-                  },
-                  "form_items": {
-                    "$ref": "../../components/form_items_normal/req_form_items_normal.yaml"
-                  },
-                  "status": {
-                    "$ref": "../../components/status_create/req_status_create.yaml"
-                  },
-                  "email": {
-                    "$ref": "../../components/email/req_email.yaml"
-                  },
-                  "files": {
-                    "$ref": "../../components/files/req_files.yaml"
-                  },
-                  "fields": {
-                    "$ref": "../../../../../shared/requests/schemas/transactions/fields.yaml"
-                  }
-                },
+                "properties": {},
                 "required": [
                   "contact_id",
                   "date",
@@ -6640,16 +5620,8 @@
             "schema": {
               "type": "string",
               "maxLength": 100
-            }
-          },
-          {
-            "name": "custom_search",
-            "in": "query",
-            "description": "Search for keywords within custom fields, use format `DD/MM/YYYY` for a date.",
-            "schema": {
-              "type": "string",
-              "maxLength": 100
-            }
+            },
+            "required": false
           },
           {
             "name": "contact_id",
@@ -6657,7 +5629,8 @@
             "description": "Search by contact ID.",
             "schema": {
               "type": "integer"
-            }
+            },
+            "required": false
           },
           {
             "name": "date_from",
@@ -6666,7 +5639,8 @@
             "schema": {
               "type": "string",
               "format": "date"
-            }
+            },
+            "required": false
           },
           {
             "name": "date_to",
@@ -6675,7 +5649,8 @@
             "schema": {
               "type": "string",
               "format": "date"
-            }
+            },
+            "required": false
           },
           {
             "name": "status",
@@ -6706,21 +5681,8 @@
                 "OPENED",
                 "VIEWED"
               ]
-            }
-          },
-          {
-            "name": "transfer_status",
-            "in": "query",
-            "description": "Search by transfer status.",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "ALL",
-                "NOT_TRANSFERRED",
-                "PARTIAL_TRANSFERRED",
-                "TRANSFERRED"
-              ]
-            }
+            },
+            "required": false
           },
           {
             "name": "page",
@@ -6730,7 +5692,8 @@
               "type": "integer",
               "minimum": 1,
               "default": 1
-            }
+            },
+            "required": false
           },
           {
             "name": "page_size",
@@ -6741,7 +5704,8 @@
               "minimum": 1,
               "maximum": 100,
               "default": 30
-            }
+            },
+            "required": false
           },
           {
             "name": "sort_by",
@@ -6759,7 +5723,8 @@
                 "amount",
                 "created_at"
               ]
-            }
+            },
+            "required": false
           },
           {
             "name": "sort_dir",
@@ -6771,7 +5736,8 @@
                 "asc",
                 "desc"
               ]
-            }
+            },
+            "required": false
           }
         ],
         "responses": {
@@ -6853,65 +5819,7 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {
-                  "contact_id": {
-                    "$ref": "../../components/customer_id/req_txn_customer_id.yaml"
-                  },
-                  "number": {
-                    "$ref": "../../../../../shared/requests/components/number/update.yaml"
-                  },
-                  "number2": {
-                    "$ref": "../../components/number2/req_txn_number2.yaml"
-                  },
-                  "date": {
-                    "$ref": "../../components/date/req_date.yaml"
-                  },
-                  "currency_code": {
-                    "$ref": "../../components/currency_code/req_currency_code.yaml"
-                  },
-                  "exchange_rate": {
-                    "$ref": "../../components/exchange_rate/req_exchange_rate.yaml"
-                  },
-                  "billing_party": {
-                    "$ref": "../../components/billing_party/req_billing_party.yaml"
-                  },
-                  "show_shipping": {
-                    "$ref": "../../components/show_shipping/req_show_shipping.yaml"
-                  },
-                  "shipping_party": {
-                    "$ref": "../../components/shipping_party/req_shipping_party.yaml"
-                  },
-                  "shipping_info": {
-                    "$ref": "../../components/shipping_info/req_shipping_info.yaml"
-                  },
-                  "tag_ids": {
-                    "$ref": "../../components/tag_ids/req_tag_ids.yaml"
-                  },
-                  "title": {
-                    "$ref": "../../components/title/req_title.yaml"
-                  },
-                  "description": {
-                    "$ref": "../../components/description/req_description.yaml"
-                  },
-                  "remarks": {
-                    "$ref": "../../components/remarks/req_remarks.yaml"
-                  },
-                  "tax_mode": {
-                    "$ref": "../../components/tax_mode/req_tax_mode.yaml"
-                  },
-                  "form_items": {
-                    "$ref": "../../components/form_items_normal/req_form_items_normal.yaml"
-                  },
-                  "email": {
-                    "$ref": "../../components/email/req_email.yaml"
-                  },
-                  "files": {
-                    "$ref": "../../components/files/req_files.yaml"
-                  },
-                  "fields": {
-                    "$ref": "../../../../../shared/requests/schemas/transactions/fields.yaml"
-                  }
-                },
+                "properties": {},
                 "required": [
                   "contact_id",
                   "number",
@@ -7062,89 +5970,7 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {
-                  "payment_mode": {
-                    "$ref": "../../components/payments/req_txn_payment_mode_sales.yaml"
-                  },
-                  "contact_id": {
-                    "$ref": "../../components/customer_id/req_txn_customer_id.yaml"
-                  },
-                  "number": {
-                    "$ref": "../../../../../shared/requests/components/number/create.yaml"
-                  },
-                  "number2": {
-                    "$ref": "../../components/number2/req_txn_number2.yaml"
-                  },
-                  "date": {
-                    "$ref": "../../components/date/req_date.yaml"
-                  },
-                  "currency_code": {
-                    "$ref": "../../components/currency_code/req_currency_code.yaml"
-                  },
-                  "exchange_rate": {
-                    "$ref": "../../components/exchange_rate/req_exchange_rate.yaml"
-                  },
-                  "billing_party": {
-                    "$ref": "../../components/billing_party/req_billing_party.yaml"
-                  },
-                  "show_shipping": {
-                    "$ref": "../../components/show_shipping/req_show_shipping.yaml"
-                  },
-                  "shipping_party": {
-                    "$ref": "../../components/shipping_party/req_shipping_party.yaml"
-                  },
-                  "shipping_info": {
-                    "$ref": "../../components/shipping_info/req_shipping_info.yaml"
-                  },
-                  "tag_ids": {
-                    "$ref": "../../components/tag_ids/req_tag_ids.yaml"
-                  },
-                  "title": {
-                    "$ref": "../../components/title/req_title.yaml"
-                  },
-                  "description": {
-                    "$ref": "../../components/description/req_description.yaml"
-                  },
-                  "remarks": {
-                    "$ref": "../../components/remarks/req_remarks.yaml"
-                  },
-                  "tax_mode": {
-                    "$ref": "../../components/tax_mode/req_tax_mode.yaml"
-                  },
-                  "form_items": {
-                    "$ref": "../../components/form_items_myinvois/req_form_items_myinvois.yaml"
-                  },
-                  "term_items": {
-                    "$ref": "../../components/term_items/req_term_items.yaml"
-                  },
-                  "deposit_items": {
-                    "$ref": "../../components/invoices/req_deposit_items_invoice.yaml"
-                  },
-                  "status": {
-                    "$ref": "../../components/status_create/req_status_create.yaml"
-                  },
-                  "email": {
-                    "$ref": "../../components/email/req_email.yaml"
-                  },
-                  "files": {
-                    "$ref": "../../components/files/req_files.yaml"
-                  },
-                  "fields": {
-                    "$ref": "../../../../../shared/requests/schemas/transactions/fields.yaml"
-                  },
-                  "customs_form_no": {
-                    "$ref": "../../components/customs_form_no/req_customs_form_no.yaml"
-                  },
-                  "customs_k2_form_no": {
-                    "$ref": "../../components/customs_k2_form_no/req_customs_k2_form_no.yaml"
-                  },
-                  "incoterms": {
-                    "$ref": "../../components/incoterms/req_incoterms.yaml"
-                  },
-                  "myinvois_action": {
-                    "$ref": "../myinvois_action/create.yaml"
-                  }
-                },
+                "properties": {},
                 "required": [
                   "contact_id",
                   "date",
@@ -7190,7 +6016,8 @@
                 "OUTSTANDING",
                 "OVERDUE"
               ]
-            }
+            },
+            "required": false
           },
           {
             "name": "date_from",
@@ -7199,7 +6026,8 @@
             "schema": {
               "type": "string",
               "format": "date"
-            }
+            },
+            "required": false
           },
           {
             "name": "date_to",
@@ -7208,7 +6036,8 @@
             "schema": {
               "type": "string",
               "format": "date"
-            }
+            },
+            "required": false
           },
           {
             "name": "search",
@@ -7217,16 +6046,8 @@
             "schema": {
               "type": "string",
               "maxLength": 100
-            }
-          },
-          {
-            "name": "custom_search",
-            "in": "query",
-            "description": "Search for keywords within custom fields, use format `DD/MM/YYYY` for a date.",
-            "schema": {
-              "type": "string",
-              "maxLength": 100
-            }
+            },
+            "required": false
           },
           {
             "name": "contact_id",
@@ -7234,7 +6055,8 @@
             "description": "Search by contact ID.",
             "schema": {
               "type": "integer"
-            }
+            },
+            "required": false
           },
           {
             "name": "payment_mode",
@@ -7246,7 +6068,8 @@
                 "credit",
                 "cash"
               ]
-            }
+            },
+            "required": false
           },
           {
             "name": "status",
@@ -7277,7 +6100,8 @@
                 "OPENED",
                 "VIEWED"
               ]
-            }
+            },
+            "required": false
           },
           {
             "name": "sort_by",
@@ -7296,7 +6120,8 @@
                 "balance",
                 "created_at"
               ]
-            }
+            },
+            "required": false
           },
           {
             "name": "sort_dir",
@@ -7308,7 +6133,8 @@
                 "asc",
                 "desc"
               ]
-            }
+            },
+            "required": false
           },
           {
             "name": "page",
@@ -7318,7 +6144,8 @@
               "type": "integer",
               "minimum": 1,
               "default": 1
-            }
+            },
+            "required": false
           },
           {
             "name": "page_size",
@@ -7329,7 +6156,8 @@
               "minimum": 1,
               "maximum": 100,
               "default": 30
-            }
+            },
+            "required": false
           }
         ],
         "responses": {
@@ -7411,83 +6239,7 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {
-                  "contact_id": {
-                    "$ref": "../../components/customer_id/req_txn_customer_id.yaml"
-                  },
-                  "number": {
-                    "$ref": "../../../../../shared/requests/components/number/update.yaml"
-                  },
-                  "number2": {
-                    "$ref": "../../components/number2/req_txn_number2.yaml"
-                  },
-                  "date": {
-                    "$ref": "../../components/date/req_date.yaml"
-                  },
-                  "currency_code": {
-                    "$ref": "../../components/currency_code/req_currency_code.yaml"
-                  },
-                  "exchange_rate": {
-                    "$ref": "../../components/exchange_rate/req_exchange_rate.yaml"
-                  },
-                  "billing_party": {
-                    "$ref": "../../components/billing_party/req_billing_party.yaml"
-                  },
-                  "show_shipping": {
-                    "$ref": "../../components/show_shipping/req_show_shipping.yaml"
-                  },
-                  "shipping_party": {
-                    "$ref": "../../components/shipping_party/req_shipping_party.yaml"
-                  },
-                  "shipping_info": {
-                    "$ref": "../../components/shipping_info/req_shipping_info.yaml"
-                  },
-                  "tag_ids": {
-                    "$ref": "../../components/tag_ids/req_tag_ids.yaml"
-                  },
-                  "title": {
-                    "$ref": "../../components/title/req_title.yaml"
-                  },
-                  "description": {
-                    "$ref": "../../components/description/req_description.yaml"
-                  },
-                  "remarks": {
-                    "$ref": "../../components/remarks/req_remarks.yaml"
-                  },
-                  "tax_mode": {
-                    "$ref": "../../components/tax_mode/req_tax_mode.yaml"
-                  },
-                  "form_items": {
-                    "$ref": "../../components/form_items_myinvois/req_form_items_myinvois.yaml"
-                  },
-                  "term_items": {
-                    "$ref": "../../components/term_items/req_term_items.yaml"
-                  },
-                  "deposit_items": {
-                    "$ref": "../../components/invoices/req_deposit_items_invoice.yaml"
-                  },
-                  "email": {
-                    "$ref": "../../components/email/req_email.yaml"
-                  },
-                  "files": {
-                    "$ref": "../../components/files/req_files.yaml"
-                  },
-                  "fields": {
-                    "$ref": "../../../../../shared/requests/schemas/transactions/fields.yaml"
-                  },
-                  "customs_form_no": {
-                    "$ref": "../../components/customs_form_no/req_customs_form_no.yaml"
-                  },
-                  "customs_k2_form_no": {
-                    "$ref": "../../components/customs_k2_form_no/req_customs_k2_form_no.yaml"
-                  },
-                  "incoterms": {
-                    "$ref": "../../components/incoterms/req_incoterms.yaml"
-                  },
-                  "myinvois_action": {
-                    "$ref": "../myinvois_action/update.yaml"
-                  }
-                },
+                "properties": {},
                 "required": [
                   "contact_id",
                   "number",
@@ -7633,56 +6385,7 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {
-                  "contact_id": {
-                    "$ref": "../../components/customer_id/req_txn_customer_id.yaml"
-                  },
-                  "number": {
-                    "$ref": "../../../../../shared/requests/components/number/create.yaml"
-                  },
-                  "number2": {
-                    "$ref": "../../components/number2/req_txn_number2.yaml"
-                  },
-                  "date": {
-                    "$ref": "../../components/date/req_date.yaml"
-                  },
-                  "currency_code": {
-                    "$ref": "../../components/currency_code/req_currency_code.yaml"
-                  },
-                  "exchange_rate": {
-                    "$ref": "../../components/exchange_rate/req_exchange_rate.yaml"
-                  },
-                  "amount": {
-                    "$ref": "../../components/payments/req_payment_amount.yaml"
-                  },
-                  "tag_ids": {
-                    "$ref": "../../components/tag_ids/req_tag_ids.yaml"
-                  },
-                  "description": {
-                    "$ref": "../../components/description/req_description.yaml"
-                  },
-                  "remarks": {
-                    "$ref": "../../components/remarks/req_remarks.yaml"
-                  },
-                  "link_items": {
-                    "$ref": "../../components/link_items/req_link_items.yaml"
-                  },
-                  "deposit_items": {
-                    "$ref": "../../components/deposit_items/req_deposit_items.yaml"
-                  },
-                  "status": {
-                    "$ref": "../../components/status_create/req_status_create.yaml"
-                  },
-                  "email": {
-                    "$ref": "../../components/email/req_email.yaml"
-                  },
-                  "files": {
-                    "$ref": "../../components/files/req_files.yaml"
-                  },
-                  "fields": {
-                    "$ref": "../../../../../shared/requests/schemas/transactions/fields.yaml"
-                  }
-                },
+                "properties": {},
                 "required": [
                   "contact_id",
                   "date",
@@ -7729,16 +6432,8 @@
             "schema": {
               "type": "string",
               "maxLength": 100
-            }
-          },
-          {
-            "name": "custom_search",
-            "in": "query",
-            "description": "Search for keywords within custom fields, use format `DD/MM/YYYY` for a date.",
-            "schema": {
-              "type": "string",
-              "maxLength": 100
-            }
+            },
+            "required": false
           },
           {
             "name": "contact_id",
@@ -7746,7 +6441,8 @@
             "description": "Search by contact ID.",
             "schema": {
               "type": "integer"
-            }
+            },
+            "required": false
           },
           {
             "name": "date_from",
@@ -7755,7 +6451,8 @@
             "schema": {
               "type": "string",
               "format": "date"
-            }
+            },
+            "required": false
           },
           {
             "name": "date_to",
@@ -7764,7 +6461,8 @@
             "schema": {
               "type": "string",
               "format": "date"
-            }
+            },
+            "required": false
           },
           {
             "name": "status",
@@ -7791,7 +6489,8 @@
                 "paid",
                 "outstanding"
               ]
-            }
+            },
+            "required": false
           },
           {
             "name": "email_status",
@@ -7807,7 +6506,8 @@
                 "OPENED",
                 "VIEWED"
               ]
-            }
+            },
+            "required": false
           },
           {
             "name": "page",
@@ -7817,7 +6517,8 @@
               "type": "integer",
               "minimum": 1,
               "default": 1
-            }
+            },
+            "required": false
           },
           {
             "name": "page_size",
@@ -7828,7 +6529,8 @@
               "minimum": 1,
               "maximum": 100,
               "default": 30
-            }
+            },
+            "required": false
           },
           {
             "name": "sort_by",
@@ -7846,7 +6548,8 @@
                 "balance",
                 "created_at"
               ]
-            }
+            },
+            "required": false
           },
           {
             "name": "sort_dir",
@@ -7858,7 +6561,8 @@
                 "asc",
                 "desc"
               ]
-            }
+            },
+            "required": false
           },
           {
             "name": "account_id",
@@ -7866,7 +6570,8 @@
             "description": "Filter by accounts in `Current Assets`, `Non-Current Assets`, `Current Liabilities` and `Equity`.",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": false
           }
         ],
         "responses": {
@@ -7949,53 +6654,7 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {
-                  "contact_id": {
-                    "$ref": "../../components/customer_id/req_txn_customer_id.yaml"
-                  },
-                  "number": {
-                    "$ref": "../../../../../shared/requests/components/number/update.yaml"
-                  },
-                  "number2": {
-                    "$ref": "../../components/number2/req_txn_number2.yaml"
-                  },
-                  "date": {
-                    "$ref": "../../components/date/req_date.yaml"
-                  },
-                  "currency_code": {
-                    "$ref": "../../components/currency_code/req_currency_code.yaml"
-                  },
-                  "exchange_rate": {
-                    "$ref": "../../components/exchange_rate/req_exchange_rate.yaml"
-                  },
-                  "amount": {
-                    "$ref": "../../components/payments/req_payment_amount.yaml"
-                  },
-                  "tag_ids": {
-                    "$ref": "../../components/tag_ids/req_tag_ids.yaml"
-                  },
-                  "description": {
-                    "$ref": "../../components/description/req_description.yaml"
-                  },
-                  "remarks": {
-                    "$ref": "../../components/remarks/req_remarks.yaml"
-                  },
-                  "link_items": {
-                    "$ref": "../../components/link_items/req_link_items.yaml"
-                  },
-                  "deposit_items": {
-                    "$ref": "../../components/deposit_items/req_deposit_items.yaml"
-                  },
-                  "email": {
-                    "$ref": "../../components/email/req_email.yaml"
-                  },
-                  "files": {
-                    "$ref": "../../components/files/req_files.yaml"
-                  },
-                  "fields": {
-                    "$ref": "../../../../../shared/requests/schemas/transactions/fields.yaml"
-                  }
-                },
+                "properties": {},
                 "required": [
                   "contact_id",
                   "date",
