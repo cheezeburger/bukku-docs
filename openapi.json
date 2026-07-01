@@ -3400,205 +3400,6 @@
         ]
       }
     },
-    "/contacts/groups": {
-      "post": {
-        "tags": [
-          "Groups"
-        ],
-        "summary": "Create Contact Group",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "$ref": "../../components/name/req_name.yaml"
-                  },
-                  "contact_ids": {
-                    "$ref": "../../components/contacts/req_contact_ids.yaml"
-                  }
-                },
-                "required": [
-                  "name"
-                ]
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "An error occurred, check the response for more information."
-          },
-          "401": {
-            "description": "User is not authenticated."
-          },
-          "403": {
-            "description": "User is not authorised to access the resource."
-          }
-        },
-        "security": [
-          {
-            "BearerToken": []
-          }
-        ]
-      },
-      "get": {
-        "tags": [
-          "Groups"
-        ],
-        "summary": "Read Contact Group List",
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "An error occurred, check the response for more information."
-          },
-          "401": {
-            "description": "User is not authenticated."
-          },
-          "403": {
-            "description": "User is not authorised to access the resource."
-          }
-        },
-        "security": [
-          {
-            "BearerToken": []
-          }
-        ]
-      }
-    },
-    "/contacts/groups/{contactId}": {
-      "get": {
-        "tags": [
-          "Groups"
-        ],
-        "summary": "Read Contact Group",
-        "parameters": [
-          {
-            "name": "contactId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "201": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "An error occurred, check the response for more information."
-          },
-          "401": {
-            "description": "User is not authenticated."
-          },
-          "403": {
-            "description": "User is not authorised to access the resource."
-          }
-        },
-        "security": [
-          {
-            "BearerToken": []
-          }
-        ]
-      },
-      "put": {
-        "tags": [
-          "Groups"
-        ],
-        "summary": "Update Contact Group",
-        "parameters": [
-          {
-            "name": "contactId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "$ref": "../../components/name/req_name.yaml"
-                  },
-                  "contact_ids": {
-                    "$ref": "../../components/contacts/req_contact_ids.yaml"
-                  }
-                },
-                "required": [
-                  "name"
-                ]
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "An error occurred, check the response for more information."
-          },
-          "401": {
-            "description": "User is not authenticated."
-          },
-          "403": {
-            "description": "User is not authorised to access the resource."
-          }
-        },
-        "security": [
-          {
-            "BearerToken": []
-          }
-        ]
-      },
-      "delete": {
-        "tags": [
-          "Groups"
-        ],
-        "summary": "Delete Contact Group",
-        "parameters": [
-          {
-            "name": "contactId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "An error occurred, check the response for more information."
-          },
-          "401": {
-            "description": "User is not authenticated."
-          },
-          "403": {
-            "description": "User is not authorised to access the resource."
-          }
-        },
-        "security": [
-          {
-            "BearerToken": []
-          }
-        ]
-      }
-    },
     "/products": {
       "post": {
         "tags": [
@@ -4043,600 +3844,6 @@
         "parameters": [
           {
             "name": "productId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "An error occurred, check the response for more information."
-          },
-          "401": {
-            "description": "User is not authenticated."
-          },
-          "403": {
-            "description": "User is not authorised to access the resource."
-          }
-        },
-        "security": [
-          {
-            "BearerToken": []
-          }
-        ]
-      }
-    },
-    "/products/bundles": {
-      "post": {
-        "tags": [
-          "Bundles"
-        ],
-        "summary": "Create Product Bundle",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "required": [
-                  "name",
-                  "is_selling",
-                  "is_buying",
-                  "items",
-                  "items.*.line",
-                  "items.*.type"
-                ],
-                "properties": {
-                  "name": {
-                    "type": "string",
-                    "description": "The name of the bundle."
-                  },
-                  "sku": {
-                    "nullable": true,
-                    "type": "string",
-                    "description": "The SKU for the bundle."
-                  },
-                  "picture_id": {
-                    "nullable": true,
-                    "type": "integer",
-                    "description": "The ID of the picture, after uploaded using Files - Upload File API, or read from List API - Files."
-                  },
-                  "picture_url": {
-                    "nullable": true,
-                    "type": "string",
-                    "description": "The URL of the picture after uploaded using Files - Upload File API, or read from List API - Files."
-                  },
-                  "remarks": {
-                    "nullable": true,
-                    "type": "string",
-                    "description": "The remarks for the bundle."
-                  },
-                  "group_ids": {
-                    "type": "array",
-                    "items": {
-                      "type": "integer"
-                    },
-                    "description": "The IDs of the groups to which the bundle belongs. Can be obtained from List API - Product."
-                  },
-                  "is_selling": {
-                    "type": "boolean",
-                    "description": "Indicates whether the bundle is available for sale."
-                  },
-                  "sale_description": {
-                    "nullable": true,
-                    "type": "string",
-                    "description": "The description for selling the bundle."
-                  },
-                  "is_buying": {
-                    "type": "boolean",
-                    "description": "Indicates whether the bundle is available for purchase."
-                  },
-                  "purchase_description": {
-                    "nullable": true,
-                    "type": "string",
-                    "description": "The description for purchasing the bundle."
-                  },
-                  "items": {
-                    "type": "array",
-                    "description": "Items in the product bundle. Must have one bundle item of type `BUNDLE_ITEM`.",
-                    "items": {
-                      "type": "object",
-                      "properties": {
-                        "line": {
-                          "type": "integer",
-                          "description": "The line number of the item in the bundle."
-                        },
-                        "type": {
-                          "type": "string",
-                          "description": "The type of the bundle item.",
-                          "enum": [
-                            "BUNDLE_ITEM",
-                            "BUNDLE_DISCOUNT"
-                          ]
-                        },
-                        "product_id": {
-                          "type": "integer",
-                          "description": "The Product ID. \nOnly required if `type` is `BUNDLE_ITEM`.\n"
-                        },
-                        "product_unit_id": {
-                          "type": "integer",
-                          "description": "The Product's Unit ID.\nOnly required if `type` is `BUNDLE_ITEM`.\n"
-                        },
-                        "quantity": {
-                          "type": "number",
-                          "description": "Quantity of the product in the bundle.\nOnly required if `type` is `BUNDLE_ITEM`.\n"
-                        },
-                        "sale_discount_amount": {
-                          "type": "number",
-                          "description": "The discount amount applied to the bundle's sale price.\nOnly required if `type` is `BUNDLE_DISCOUNT` and `is_selling` is true.\n"
-                        },
-                        "purchase_discount_amount": {
-                          "type": "number",
-                          "description": "The discount amount applied to the bundle's purchase price.\nOnly required if `type` is `BUNDLE_DISCOUNT` and `is_selling` is true.\n"
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "An error occurred, check the response for more information."
-          },
-          "401": {
-            "description": "User is not authenticated."
-          },
-          "403": {
-            "description": "User is not authorised to access the resource."
-          }
-        },
-        "security": [
-          {
-            "BearerToken": []
-          }
-        ]
-      }
-    },
-    "/products/bundles/{productBundleId}": {
-      "get": {
-        "tags": [
-          "Bundles"
-        ],
-        "summary": "Read Product Bundle",
-        "parameters": [
-          {
-            "name": "productBundleId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "An error occurred, check the response for more information."
-          },
-          "401": {
-            "description": "User is not authenticated."
-          },
-          "403": {
-            "description": "User is not authorised to access the resource."
-          }
-        },
-        "security": [
-          {
-            "BearerToken": []
-          }
-        ]
-      },
-      "put": {
-        "tags": [
-          "Bundles"
-        ],
-        "summary": "Update Product Bundle",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "required": [
-                  "name",
-                  "is_selling",
-                  "is_buying",
-                  "items",
-                  "items.*.line",
-                  "items.*.type"
-                ],
-                "properties": {
-                  "name": {
-                    "type": "string",
-                    "description": "The name of the bundle."
-                  },
-                  "sku": {
-                    "nullable": true,
-                    "type": "string",
-                    "description": "The SKU for the bundle."
-                  },
-                  "picture_id": {
-                    "nullable": true,
-                    "type": "integer",
-                    "description": "The ID of the picture, after uploaded using Files - Upload File API, or read from List API - Files."
-                  },
-                  "picture_url": {
-                    "nullable": true,
-                    "type": "string",
-                    "description": "The URL of the picture after uploaded using Files - Upload File API, or read from List API - Files."
-                  },
-                  "remarks": {
-                    "nullable": true,
-                    "type": "string",
-                    "description": "The remarks for the bundle."
-                  },
-                  "group_ids": {
-                    "type": "array",
-                    "items": {
-                      "type": "integer"
-                    },
-                    "description": "The IDs of the groups to which the bundle belongs. Can be obtained from List API - Product."
-                  },
-                  "is_selling": {
-                    "type": "boolean",
-                    "description": "Indicates whether the bundle is available for sale."
-                  },
-                  "sale_description": {
-                    "nullable": true,
-                    "type": "string",
-                    "description": "The description for selling the bundle."
-                  },
-                  "is_buying": {
-                    "type": "boolean",
-                    "description": "Indicates whether the bundle is available for purchase."
-                  },
-                  "purchase_description": {
-                    "nullable": true,
-                    "type": "string",
-                    "description": "The description for purchasing the bundle."
-                  },
-                  "items": {
-                    "type": "array",
-                    "description": "Items in the product bundle.",
-                    "items": {
-                      "type": "object",
-                      "properties": {
-                        "id": {
-                          "nullable": true,
-                          "type": "integer",
-                          "description": "The ID for the Bundle Item.\nLeave value as `null` if the item is new in the Bundle.\nIf updating an existing Bundle Item, provide the existing Bundle Item ID to update the item instead of re-creating it.\n"
-                        },
-                        "line": {
-                          "type": "integer",
-                          "description": "The line number of the item in the bundle."
-                        },
-                        "type": {
-                          "type": "string",
-                          "description": "The type of the bundle item.",
-                          "enum": [
-                            "BUNDLE_ITEM",
-                            "BUNDLE_DISCOUNT"
-                          ]
-                        },
-                        "product_id": {
-                          "type": "integer",
-                          "description": "The Product ID. \nOnly required if `type` is `BUNDLE_ITEM`.\n"
-                        },
-                        "product_unit_id": {
-                          "type": "integer",
-                          "description": "The Product's Unit ID.\nOnly required if `type` is `BUNDLE_ITEM`.\n"
-                        },
-                        "quantity": {
-                          "type": "number",
-                          "description": "Quantity of the product in the bundle.\nOnly required if `type` is `BUNDLE_ITEM`.\n"
-                        },
-                        "sale_discount_amount": {
-                          "type": "number",
-                          "description": "The discount amount applied to the bundle's sale price.\nOnly required if `type` is `BUNDLE_DISCOUNT` and `is_selling` is true.\n"
-                        },
-                        "purchase_discount_amount": {
-                          "type": "number",
-                          "description": "The discount amount applied to the bundle's purchase price.\nOnly required if `type` is `BUNDLE_DISCOUNT` and `is_selling` is true.\n"
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "productBundleId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "An error occurred, check the response for more information."
-          },
-          "401": {
-            "description": "User is not authenticated."
-          },
-          "403": {
-            "description": "User is not authorised to access the resource."
-          }
-        },
-        "security": [
-          {
-            "BearerToken": []
-          }
-        ]
-      },
-      "patch": {
-        "tags": [
-          "Bundles"
-        ],
-        "summary": "Archive / Unarchive Product Bundle",
-        "parameters": [
-          {
-            "name": "productBundleId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "An error occurred, check the response for more information."
-          },
-          "401": {
-            "description": "User is not authenticated."
-          },
-          "403": {
-            "description": "User is not authorised to access the resource."
-          }
-        },
-        "security": [
-          {
-            "BearerToken": []
-          }
-        ]
-      },
-      "delete": {
-        "tags": [
-          "Bundles"
-        ],
-        "summary": "Delete Product Bundle",
-        "parameters": [
-          {
-            "name": "productBundleId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "An error occurred, check the response for more information."
-          },
-          "401": {
-            "description": "User is not authenticated."
-          },
-          "403": {
-            "description": "User is not authorised to access the resource."
-          }
-        },
-        "security": [
-          {
-            "BearerToken": []
-          }
-        ]
-      }
-    },
-    "/products/groups": {
-      "post": {
-        "tags": [
-          "Groups"
-        ],
-        "summary": "Create Product Group",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "$ref": "../group_name/req_group_name.yaml"
-                  },
-                  "product_ids": {
-                    "$ref": "../products/req_product_ids.yaml"
-                  }
-                },
-                "required": [
-                  "name",
-                  "product_ids"
-                ]
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "An error occurred, check the response for more information."
-          },
-          "401": {
-            "description": "User is not authenticated."
-          },
-          "403": {
-            "description": "User is not authorised to access the resource."
-          }
-        },
-        "security": [
-          {
-            "BearerToken": []
-          }
-        ]
-      },
-      "get": {
-        "tags": [
-          "Groups"
-        ],
-        "summary": "Read Product Group List",
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "An error occurred, check the response for more information."
-          },
-          "401": {
-            "description": "User is not authenticated."
-          },
-          "403": {
-            "description": "User is not authorised to access the resource."
-          }
-        },
-        "security": [
-          {
-            "BearerToken": []
-          }
-        ]
-      }
-    },
-    "/products/groups/{productGroupId}": {
-      "get": {
-        "tags": [
-          "Groups"
-        ],
-        "summary": "Read Product Group",
-        "parameters": [
-          {
-            "name": "productGroupId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "An error occurred, check the response for more information."
-          },
-          "401": {
-            "description": "User is not authenticated."
-          },
-          "403": {
-            "description": "User is not authorised to access the resource."
-          }
-        },
-        "security": [
-          {
-            "BearerToken": []
-          }
-        ]
-      },
-      "put": {
-        "tags": [
-          "Groups"
-        ],
-        "summary": "Update Product Group",
-        "parameters": [
-          {
-            "name": "productGroupId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "$ref": "../group_name/req_group_name.yaml"
-                  },
-                  "product_ids": {
-                    "$ref": "../products/req_product_ids.yaml"
-                  }
-                },
-                "required": [
-                  "name",
-                  "product_ids"
-                ]
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "An error occurred, check the response for more information."
-          },
-          "401": {
-            "description": "User is not authenticated."
-          },
-          "403": {
-            "description": "User is not authorised to access the resource."
-          }
-        },
-        "security": [
-          {
-            "BearerToken": []
-          }
-        ]
-      },
-      "delete": {
-        "tags": [
-          "Groups"
-        ],
-        "summary": "Delete Product Group",
-        "description": "Delete the product group with the given product group ID.\n",
-        "parameters": [
-          {
-            "name": "productGroupId",
             "in": "path",
             "required": true,
             "schema": {
@@ -5745,514 +4952,6 @@
         ]
       }
     },
-    "/purchases/credit_notes": {
-      "post": {
-        "tags": [
-          "Credit Note"
-        ],
-        "summary": "Create Credit Note",
-        "security": [
-          {
-            "BearerToken": []
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "contact_id": {
-                    "$ref": "../../components/supplier_id/req_txn_supplier_id.yaml"
-                  },
-                  "number": {
-                    "$ref": "../../../../../shared/requests/components/number/create.yaml"
-                  },
-                  "number2": {
-                    "$ref": "../../components/number2/req_txn_number2.yaml"
-                  },
-                  "date": {
-                    "$ref": "../../components/date/req_date.yaml"
-                  },
-                  "currency_code": {
-                    "$ref": "../../components/currency_code/req_currency_code.yaml"
-                  },
-                  "exchange_rate": {
-                    "$ref": "../../components/exchange_rate/req_exchange_rate.yaml"
-                  },
-                  "billing_party": {
-                    "$ref": "../../components/bills/req_billing_party.yaml"
-                  },
-                  "tag_ids": {
-                    "$ref": "../../components/tag_ids/req_tag_ids.yaml"
-                  },
-                  "description": {
-                    "$ref": "../../components/description/req_description.yaml"
-                  },
-                  "remarks": {
-                    "$ref": "../../components/remarks/req_remarks.yaml"
-                  },
-                  "tax_mode": {
-                    "$ref": "../../components/tax_mode/req_tax_mode.yaml"
-                  },
-                  "form_items": {
-                    "$ref": "../../components/form_items_myinvois_without_transfer/req_form_items_myinvois_without_transfer.yaml"
-                  },
-                  "link_items": {
-                    "$ref": "../../components/link_items/req_link_items.yaml"
-                  },
-                  "status": {
-                    "$ref": "../../components/status_create/req_status_create.yaml"
-                  },
-                  "files": {
-                    "$ref": "../../components/files/req_files.yaml"
-                  },
-                  "fields": {
-                    "$ref": "../../../../../shared/requests/schemas/transactions/fields.yaml"
-                  },
-                  "customs_form_no": {
-                    "$ref": "../../components/customs_form_no/req_customs_form_no.yaml"
-                  },
-                  "customs_k2_form_no": {
-                    "$ref": "../../components/customs_k2_form_no/req_customs_k2_form_no.yaml"
-                  },
-                  "incoterms": {
-                    "$ref": "../../components/incoterms/req_incoterms.yaml"
-                  },
-                  "myinvois_action": {
-                    "$ref": "../myinvois_action/create.yaml"
-                  }
-                },
-                "required": [
-                  "contact_id",
-                  "date",
-                  "currency_code",
-                  "exchange_rate",
-                  "tax_mode",
-                  "form_items",
-                  "status"
-                ]
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "An error occurred, check the response for more information."
-          },
-          "401": {
-            "description": "User is not authenticated."
-          },
-          "403": {
-            "description": "User is not authorised to access the resource."
-          }
-        }
-      },
-      "get": {
-        "tags": [
-          "Credit Note"
-        ],
-        "summary": "Read Credit Note List",
-        "parameters": [
-          {
-            "name": "payment_status",
-            "in": "query",
-            "description": "Filter by payment status.",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "PAID",
-                "OUTSTANDING",
-                "OVERDUE"
-              ]
-            }
-          },
-          {
-            "name": "date_from",
-            "in": "query",
-            "description": "Search for transactions on and after the date.",
-            "schema": {
-              "type": "string",
-              "format": "date"
-            }
-          },
-          {
-            "name": "date_to",
-            "in": "query",
-            "description": "Search for transactions on and before the date.",
-            "schema": {
-              "type": "string",
-              "format": "date"
-            }
-          },
-          {
-            "name": "search",
-            "in": "query",
-            "description": "Search for keywords in `No.`, `Reference No.`, `Title`, `Remarks`, `Description`, `Contact Name`, `Billing Party` & `Shipping Party`.",
-            "schema": {
-              "type": "string",
-              "maxLength": 100
-            }
-          },
-          {
-            "name": "custom_search",
-            "in": "query",
-            "description": "Search for keywords within custom fields, use format `DD/MM/YYYY` for a date.",
-            "schema": {
-              "type": "string",
-              "maxLength": 100
-            }
-          },
-          {
-            "name": "contact_id",
-            "in": "query",
-            "description": "Search by contact ID.",
-            "schema": {
-              "type": "integer"
-            }
-          },
-          {
-            "name": "status",
-            "in": "query",
-            "description": "Search by status, defaults to All status but Void if not provided.",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "enum": [
-                "draft",
-                "pending_approval",
-                "ready",
-                "void"
-              ]
-            }
-          },
-          {
-            "name": "sort_by",
-            "in": "query",
-            "description": "Sort by field.",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "number",
-                "date",
-                "contact_name",
-                "number2",
-                "description",
-                "amount",
-                "balance",
-                "created_at"
-              ]
-            }
-          },
-          {
-            "name": "sort_dir",
-            "in": "query",
-            "description": "Sort the list in ascending or descending order.",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "asc",
-                "desc"
-              ]
-            }
-          },
-          {
-            "name": "page",
-            "in": "query",
-            "description": "The current page number.",
-            "schema": {
-              "type": "integer",
-              "minimum": 1,
-              "default": 1
-            }
-          },
-          {
-            "name": "page_size",
-            "in": "query",
-            "description": "Number of records per page.",
-            "schema": {
-              "type": "integer",
-              "minimum": 1,
-              "maximum": 100,
-              "default": 30
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "An error occurred, check the response for more information."
-          },
-          "401": {
-            "description": "User is not authenticated."
-          },
-          "403": {
-            "description": "User is not authorised to access the resource."
-          }
-        },
-        "security": [
-          {
-            "BearerToken": []
-          }
-        ]
-      }
-    },
-    "/purchases/credit_notes/{transactionId}": {
-      "get": {
-        "tags": [
-          "Credit Note"
-        ],
-        "summary": "Read Credit Note",
-        "parameters": [
-          {
-            "name": "transactionId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "description": "ID of the transaction."
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "An error occurred, check the response for more information."
-          },
-          "401": {
-            "description": "User is not authenticated."
-          },
-          "403": {
-            "description": "User is not authorised to access the resource."
-          }
-        },
-        "security": [
-          {
-            "BearerToken": []
-          }
-        ]
-      },
-      "put": {
-        "tags": [
-          "Credit Note"
-        ],
-        "summary": "Update Credit Note",
-        "parameters": [
-          {
-            "name": "transactionId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "description": "ID of the transaction."
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "contact_id": {
-                    "$ref": "../../components/supplier_id/req_txn_supplier_id.yaml"
-                  },
-                  "number": {
-                    "$ref": "../../../../../shared/requests/components/number/update.yaml"
-                  },
-                  "number2": {
-                    "$ref": "../../components/number2/req_txn_number2.yaml"
-                  },
-                  "date": {
-                    "$ref": "../../components/date/req_date.yaml"
-                  },
-                  "currency_code": {
-                    "$ref": "../../components/currency_code/req_currency_code.yaml"
-                  },
-                  "exchange_rate": {
-                    "$ref": "../../components/exchange_rate/req_exchange_rate.yaml"
-                  },
-                  "billing_party": {
-                    "$ref": "../../components/bills/req_billing_party.yaml"
-                  },
-                  "tag_ids": {
-                    "$ref": "../../components/tag_ids/req_tag_ids.yaml"
-                  },
-                  "description": {
-                    "$ref": "../../components/description/req_description.yaml"
-                  },
-                  "remarks": {
-                    "$ref": "../../components/remarks/req_remarks.yaml"
-                  },
-                  "tax_mode": {
-                    "$ref": "../../components/tax_mode/req_tax_mode.yaml"
-                  },
-                  "form_items": {
-                    "$ref": "../../components/form_items_myinvois_without_transfer/req_form_items_myinvois_without_transfer.yaml"
-                  },
-                  "link_items": {
-                    "$ref": "../../components/link_items/req_link_items.yaml"
-                  },
-                  "files": {
-                    "$ref": "../../components/files/req_files.yaml"
-                  },
-                  "fields": {
-                    "$ref": "../../../../../shared/requests/schemas/transactions/fields.yaml"
-                  },
-                  "customs_form_no": {
-                    "$ref": "../../components/customs_form_no/req_customs_form_no.yaml"
-                  },
-                  "customs_k2_form_no": {
-                    "$ref": "../../components/customs_k2_form_no/req_customs_k2_form_no.yaml"
-                  },
-                  "incoterms": {
-                    "$ref": "../../components/incoterms/req_incoterms.yaml"
-                  },
-                  "myinvois_action": {
-                    "$ref": "../myinvois_action/update.yaml"
-                  }
-                },
-                "required": [
-                  "contact_id",
-                  "number",
-                  "date",
-                  "currency_code",
-                  "exchange_rate",
-                  "tax_mode",
-                  "form_items"
-                ]
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "An error occurred, check the response for more information."
-          },
-          "401": {
-            "description": "User is not authenticated."
-          },
-          "403": {
-            "description": "User is not authorised to access the resource."
-          }
-        },
-        "security": [
-          {
-            "BearerToken": []
-          }
-        ]
-      },
-      "patch": {
-        "tags": [
-          "Credit Note"
-        ],
-        "summary": "Update Credit Note Status",
-        "description": "Only the following update paths are supported:\n  - `draft` → `pending_approval`\n  - `draft` → `ready`\n  - `pending_approval` → `ready`\n  - `ready` → `void`\n  - `void` → `ready`\n",
-        "parameters": [
-          {
-            "name": "transactionId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "description": "ID of the transaction."
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "status": {
-                    "type": "string",
-                    "enum": [
-                      "draft",
-                      "pending_approval",
-                      "ready",
-                      "void"
-                    ],
-                    "description": "The transaction status."
-                  },
-                  "void_reason": {
-                    "type": "string",
-                    "maxLength": 255,
-                    "description": "Provide a reason to void the transaction.\n\n<span style=\"color: red; font-weight: 800;\">\n  It is REQUIRED when VOID-ing a MyInvois VALIDATE transaction.\n</span>\n"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "An error occurred, check the response for more information."
-          },
-          "401": {
-            "description": "User is not authenticated."
-          },
-          "403": {
-            "description": "User is not authorised to access the resource."
-          }
-        },
-        "security": [
-          {
-            "BearerToken": []
-          }
-        ]
-      },
-      "delete": {
-        "tags": [
-          "Credit Note"
-        ],
-        "summary": "Delete Credit Note",
-        "description": "Only transactions with `draft` and `void` statuses can be deleted.",
-        "parameters": [
-          {
-            "name": "transactionId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "description": "ID of the transaction."
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "An error occurred, check the response for more information."
-          },
-          "401": {
-            "description": "User is not authenticated."
-          },
-          "403": {
-            "description": "User is not authorised to access the resource."
-          }
-        },
-        "security": [
-          {
-            "BearerToken": []
-          }
-        ]
-      }
-    },
     "/purchases/payments": {
       "post": {
         "tags": [
@@ -6727,504 +5426,6 @@
           "Payment"
         ],
         "summary": "Delete Payment",
-        "description": "Only transactions with `draft` and `void` statuses can be deleted.",
-        "parameters": [
-          {
-            "name": "transactionId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "description": "ID of the transaction."
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "An error occurred, check the response for more information."
-          },
-          "401": {
-            "description": "User is not authenticated."
-          },
-          "403": {
-            "description": "User is not authorised to access the resource."
-          }
-        },
-        "security": [
-          {
-            "BearerToken": []
-          }
-        ]
-      }
-    },
-    "/purchases/refunds": {
-      "post": {
-        "tags": [
-          "Refund"
-        ],
-        "summary": "Create Refund",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "contact_id": {
-                    "$ref": "../../components/supplier_employee_id/req_txn_supplier_employee_id.yaml"
-                  },
-                  "number": {
-                    "$ref": "../../../../../shared/requests/components/number/create.yaml"
-                  },
-                  "number2": {
-                    "$ref": "../../components/number2/req_txn_number2.yaml"
-                  },
-                  "date": {
-                    "$ref": "../../components/date/req_date.yaml"
-                  },
-                  "currency_code": {
-                    "$ref": "../../components/currency_code/req_currency_code.yaml"
-                  },
-                  "exchange_rate": {
-                    "$ref": "../../components/exchange_rate/req_exchange_rate.yaml"
-                  },
-                  "tag_ids": {
-                    "$ref": "../../components/tag_ids/req_tag_ids.yaml"
-                  },
-                  "description": {
-                    "$ref": "../../components/description/req_description.yaml"
-                  },
-                  "remarks": {
-                    "$ref": "../../components/remarks/req_remarks.yaml"
-                  },
-                  "link_items": {
-                    "$ref": "../../components/link_items/req_link_items.yaml"
-                  },
-                  "deposit_items": {
-                    "$ref": "../../components/deposit_items/req_deposit_items.yaml"
-                  },
-                  "status": {
-                    "$ref": "../../components/status_create/req_status_create.yaml"
-                  },
-                  "email": {
-                    "$ref": "../../components/email/req_email.yaml"
-                  },
-                  "files": {
-                    "$ref": "../../components/files/req_files.yaml"
-                  },
-                  "fields": {
-                    "$ref": "../../../../../shared/requests/schemas/transactions/fields.yaml"
-                  }
-                },
-                "required": [
-                  "contact_id",
-                  "date",
-                  "currency_code",
-                  "exchange_rate",
-                  "deposit_items",
-                  "status"
-                ]
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "An error occurred, check the response for more information."
-          },
-          "401": {
-            "description": "User is not authenticated."
-          },
-          "403": {
-            "description": "User is not authorised to access the resource."
-          }
-        },
-        "security": [
-          {
-            "BearerToken": []
-          }
-        ]
-      },
-      "get": {
-        "tags": [
-          "Refund"
-        ],
-        "summary": "Read Refund List",
-        "parameters": [
-          {
-            "name": "search",
-            "in": "query",
-            "description": "Search for keywords in `No.`, `Reference No.`, `Title`, `Remarks`, `Description`, `Contact Name`, `Billing Party` & `Shipping Party`.",
-            "schema": {
-              "type": "string",
-              "maxLength": 100
-            }
-          },
-          {
-            "name": "custom_search",
-            "in": "query",
-            "description": "Search for keywords within custom fields, use format `DD/MM/YYYY` for a date.",
-            "schema": {
-              "type": "string",
-              "maxLength": 100
-            }
-          },
-          {
-            "name": "contact_id",
-            "in": "query",
-            "description": "Search by contact ID.",
-            "schema": {
-              "type": "integer"
-            }
-          },
-          {
-            "name": "date_from",
-            "in": "query",
-            "description": "Search for transactions on and after the date.",
-            "schema": {
-              "type": "string",
-              "format": "date"
-            }
-          },
-          {
-            "name": "date_to",
-            "in": "query",
-            "description": "Search for transactions on and before the date.",
-            "schema": {
-              "type": "string",
-              "format": "date"
-            }
-          },
-          {
-            "name": "status",
-            "in": "query",
-            "description": "Search by status, defaults to All status but Void if not provided.",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "enum": [
-                "draft",
-                "pending_approval",
-                "ready",
-                "void"
-              ]
-            }
-          },
-          {
-            "name": "payment_status",
-            "in": "query",
-            "description": "Filter by payment status.",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "paid",
-                "outstanding"
-              ]
-            }
-          },
-          {
-            "name": "email_status",
-            "in": "query",
-            "description": "Search by the latest email status.",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "UNSENT",
-                "PENDING",
-                "SENT",
-                "BOUNCED",
-                "OPENED",
-                "VIEWED"
-              ]
-            }
-          },
-          {
-            "name": "page",
-            "in": "query",
-            "description": "The current page number.",
-            "schema": {
-              "type": "integer",
-              "minimum": 1,
-              "default": 1
-            }
-          },
-          {
-            "name": "page_size",
-            "in": "query",
-            "description": "Number of records per page.",
-            "schema": {
-              "type": "integer",
-              "minimum": 1,
-              "maximum": 100,
-              "default": 30
-            }
-          },
-          {
-            "name": "sort_by",
-            "in": "query",
-            "description": "Sort by field.",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "number",
-                "date",
-                "contact_name",
-                "number2",
-                "description",
-                "amount",
-                "created_at"
-              ]
-            }
-          },
-          {
-            "name": "sort_dir",
-            "in": "query",
-            "description": "Sort the list in ascending or descending order.",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "asc",
-                "desc"
-              ]
-            }
-          },
-          {
-            "name": "account_id",
-            "in": "query",
-            "description": "Filter by account you've deposited to.",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "An error occurred, check the response for more information."
-          },
-          "401": {
-            "description": "User is not authenticated."
-          },
-          "403": {
-            "description": "User is not authorised to access the resource."
-          }
-        },
-        "security": [
-          {
-            "BearerToken": []
-          }
-        ]
-      }
-    },
-    "/purchases/refunds/{id}": {
-      "get": {
-        "tags": [
-          "Refund"
-        ],
-        "summary": "Read Refund",
-        "parameters": [
-          {
-            "name": "transactionId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "description": "ID of the transaction."
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "An error occurred, check the response for more information."
-          },
-          "401": {
-            "description": "User is not authenticated."
-          },
-          "403": {
-            "description": "User is not authorised to access the resource."
-          }
-        },
-        "security": [
-          {
-            "BearerToken": []
-          }
-        ]
-      },
-      "put": {
-        "tags": [
-          "Refund"
-        ],
-        "summary": "Update Refund",
-        "parameters": [
-          {
-            "name": "transactionId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "description": "ID of the transaction."
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "contact_id": {
-                    "$ref": "../../components/supplier_employee_id/req_txn_supplier_employee_id.yaml"
-                  },
-                  "number": {
-                    "$ref": "../../../../../shared/requests/components/number/update.yaml"
-                  },
-                  "number2": {
-                    "$ref": "../../components/number2/req_txn_number2.yaml"
-                  },
-                  "date": {
-                    "$ref": "../../components/date/req_date.yaml"
-                  },
-                  "currency_code": {
-                    "$ref": "../../components/currency_code/req_currency_code.yaml"
-                  },
-                  "exchange_rate": {
-                    "$ref": "../../components/exchange_rate/req_exchange_rate.yaml"
-                  },
-                  "tag_ids": {
-                    "$ref": "../../components/tag_ids/req_tag_ids.yaml"
-                  },
-                  "description": {
-                    "$ref": "../../components/description/req_description.yaml"
-                  },
-                  "remarks": {
-                    "$ref": "../../components/remarks/req_remarks.yaml"
-                  },
-                  "link_items": {
-                    "$ref": "../../components/link_items/req_link_items.yaml"
-                  },
-                  "deposit_items": {
-                    "$ref": "../../components/deposit_items/req_deposit_items.yaml"
-                  },
-                  "email": {
-                    "$ref": "../../components/email/req_email.yaml"
-                  },
-                  "files": {
-                    "$ref": "../../components/files/req_files.yaml"
-                  },
-                  "fields": {
-                    "$ref": "../../../../../shared/requests/schemas/transactions/fields.yaml"
-                  }
-                },
-                "required": [
-                  "contact_id",
-                  "date",
-                  "currency_code",
-                  "exchange_rate",
-                  "deposit_items",
-                  "number"
-                ]
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "An error occurred, check the response for more information."
-          },
-          "401": {
-            "description": "User is not authenticated."
-          },
-          "403": {
-            "description": "User is not authorised to access the resource."
-          }
-        },
-        "security": [
-          {
-            "BearerToken": []
-          }
-        ]
-      },
-      "patch": {
-        "tags": [
-          "Refund"
-        ],
-        "summary": "Update Refund Status",
-        "description": "Only the following update paths are supported:\n  - `draft` → `pending_approval`\n  - `draft` → `ready`\n  - `pending_approval` → `ready`\n  - `ready` → `void`\n  - `void` → `ready`\n",
-        "parameters": [
-          {
-            "name": "transactionId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "description": "ID of the transaction."
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "status": {
-                    "type": "string",
-                    "enum": [
-                      "draft",
-                      "pending_approval",
-                      "ready",
-                      "void"
-                    ],
-                    "description": "The transaction status."
-                  },
-                  "void_reason": {
-                    "type": "string",
-                    "maxLength": 255,
-                    "description": "Provide a reason to void the transaction.\n\n<span style=\"color: red; font-weight: 800;\">\n  It is REQUIRED when VOID-ing a MyInvois VALIDATE transaction.\n</span>\n"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "An error occurred, check the response for more information."
-          },
-          "401": {
-            "description": "User is not authenticated."
-          },
-          "403": {
-            "description": "User is not authorised to access the resource."
-          }
-        },
-        "security": [
-          {
-            "BearerToken": []
-          }
-        ]
-      },
-      "delete": {
-        "tags": [
-          "Refund"
-        ],
-        "summary": "Delete Refund",
         "description": "Only transactions with `draft` and `void` statuses can be deleted.",
         "parameters": [
           {
@@ -7756,6 +5957,1062 @@
           "Quotation"
         ],
         "summary": "Delete Quotation",
+        "description": "Only transactions with `draft` and `void` statuses can be deleted.",
+        "parameters": [
+          {
+            "name": "transactionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "description": "ID of the transaction."
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "An error occurred, check the response for more information."
+          },
+          "401": {
+            "description": "User is not authenticated."
+          },
+          "403": {
+            "description": "User is not authorised to access the resource."
+          }
+        },
+        "security": [
+          {
+            "BearerToken": []
+          }
+        ]
+      }
+    },
+    "/sales/orders": {
+      "post": {
+        "tags": [
+          "Sales Order"
+        ],
+        "summary": "Create Sales Order",
+        "security": [
+          {
+            "BearerToken": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "contact_id": {
+                    "$ref": "../../components/customer_id/req_txn_customer_id.yaml"
+                  },
+                  "number": {
+                    "$ref": "../../../../../shared/requests/components/number/create.yaml"
+                  },
+                  "number2": {
+                    "$ref": "../../components/number2/req_txn_number2.yaml"
+                  },
+                  "date": {
+                    "$ref": "../../components/date/req_date.yaml"
+                  },
+                  "currency_code": {
+                    "$ref": "../../components/currency_code/req_currency_code.yaml"
+                  },
+                  "exchange_rate": {
+                    "$ref": "../../components/exchange_rate/req_exchange_rate.yaml"
+                  },
+                  "billing_party": {
+                    "$ref": "../../components/billing_party/req_billing_party.yaml"
+                  },
+                  "show_shipping": {
+                    "$ref": "../../components/show_shipping/req_show_shipping.yaml"
+                  },
+                  "shipping_party": {
+                    "$ref": "../../components/shipping_party/req_shipping_party.yaml"
+                  },
+                  "shipping_info": {
+                    "$ref": "../../components/shipping_info/req_shipping_info.yaml"
+                  },
+                  "tag_ids": {
+                    "$ref": "../../components/tag_ids/req_tag_ids.yaml"
+                  },
+                  "term_id": {
+                    "$ref": "../../components/term_id/req_term_id.yaml"
+                  },
+                  "title": {
+                    "$ref": "../../components/title/req_title.yaml"
+                  },
+                  "description": {
+                    "$ref": "../../components/description/req_description.yaml"
+                  },
+                  "remarks": {
+                    "$ref": "../../components/remarks/req_remarks.yaml"
+                  },
+                  "tax_mode": {
+                    "$ref": "../../components/tax_mode/req_tax_mode.yaml"
+                  },
+                  "form_items": {
+                    "$ref": "../../components/form_items_normal/req_form_items_normal.yaml"
+                  },
+                  "status": {
+                    "$ref": "../../components/status_create/req_status_create.yaml"
+                  },
+                  "email": {
+                    "$ref": "../../components/email/req_email.yaml"
+                  },
+                  "files": {
+                    "$ref": "../../components/files/req_files.yaml"
+                  },
+                  "fields": {
+                    "$ref": "../../../../../shared/requests/schemas/transactions/fields.yaml"
+                  }
+                },
+                "required": [
+                  "contact_id",
+                  "date",
+                  "currency_code",
+                  "exchange_rate",
+                  "tax_mode",
+                  "form_items",
+                  "status"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "An error occurred, check the response for more information."
+          },
+          "401": {
+            "description": "User is not authenticated."
+          },
+          "403": {
+            "description": "User is not authorised to access the resource."
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Sales Order"
+        ],
+        "summary": "Read Sales Order List",
+        "parameters": [
+          {
+            "name": "search",
+            "in": "query",
+            "description": "Search for keywords in `No.`, `Reference No.`, `Title`, `Remarks`, `Description`, `Contact Name`, `Billing Party` & `Shipping Party`.",
+            "schema": {
+              "type": "string",
+              "maxLength": 100
+            }
+          },
+          {
+            "name": "custom_search",
+            "in": "query",
+            "description": "Search for keywords within custom fields, use format `DD/MM/YYYY` for a date.",
+            "schema": {
+              "type": "string",
+              "maxLength": 100
+            }
+          },
+          {
+            "name": "contact_id",
+            "in": "query",
+            "description": "Search by contact ID.",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "date_from",
+            "in": "query",
+            "description": "Search for transactions on and after the date.",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "date_to",
+            "in": "query",
+            "description": "Search for transactions on and before the date.",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "Search by status, defaults to All status but Void if not provided.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "draft",
+                "pending_approval",
+                "ready",
+                "void"
+              ]
+            }
+          },
+          {
+            "name": "email_status",
+            "in": "query",
+            "description": "Search by the latest email status.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "UNSENT",
+                "PENDING",
+                "SENT",
+                "BOUNCED",
+                "OPENED",
+                "VIEWED"
+              ]
+            }
+          },
+          {
+            "name": "transfer_status",
+            "in": "query",
+            "description": "Search by transfer status.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "ALL",
+                "NOT_TRANSFERRED",
+                "PARTIAL_TRANSFERRED",
+                "TRANSFERRED"
+              ]
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "The current page number.",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "default": 1
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "description": "Number of records per page.",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "default": 30
+            }
+          },
+          {
+            "name": "sort_by",
+            "in": "query",
+            "description": "Sort by field.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "number",
+                "date",
+                "contact_name",
+                "number2",
+                "title",
+                "description",
+                "amount",
+                "created_at"
+              ]
+            }
+          },
+          {
+            "name": "sort_dir",
+            "in": "query",
+            "description": "Sort the list in ascending or descending order.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "asc",
+                "desc"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "An error occurred, check the response for more information."
+          },
+          "401": {
+            "description": "User is not authenticated."
+          },
+          "403": {
+            "description": "User is not authorised to access the resource."
+          }
+        },
+        "security": [
+          {
+            "BearerToken": []
+          }
+        ]
+      }
+    },
+    "/sales/orders/{transactionId}": {
+      "get": {
+        "tags": [
+          "Sales Order"
+        ],
+        "summary": "Read Sales Order",
+        "parameters": [
+          {
+            "name": "transactionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "description": "ID of the transaction."
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "An error occurred, check the response for more information."
+          },
+          "401": {
+            "description": "User is not authenticated."
+          },
+          "403": {
+            "description": "User is not authorised to access the resource."
+          }
+        },
+        "security": [
+          {
+            "BearerToken": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Sales Order"
+        ],
+        "summary": "Update Sales Order",
+        "parameters": [
+          {
+            "name": "transactionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "description": "ID of the transaction."
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "contact_id": {
+                    "$ref": "../../components/customer_id/req_txn_customer_id.yaml"
+                  },
+                  "number": {
+                    "$ref": "../../../../../shared/requests/components/number/update.yaml"
+                  },
+                  "number2": {
+                    "$ref": "../../components/number2/req_txn_number2.yaml"
+                  },
+                  "date": {
+                    "$ref": "../../components/date/req_date.yaml"
+                  },
+                  "currency_code": {
+                    "$ref": "../../components/currency_code/req_currency_code.yaml"
+                  },
+                  "exchange_rate": {
+                    "$ref": "../../components/exchange_rate/req_exchange_rate.yaml"
+                  },
+                  "billing_party": {
+                    "$ref": "../../components/billing_party/req_billing_party.yaml"
+                  },
+                  "show_shipping": {
+                    "$ref": "../../components/show_shipping/req_show_shipping.yaml"
+                  },
+                  "shipping_party": {
+                    "$ref": "../../components/shipping_party/req_shipping_party.yaml"
+                  },
+                  "shipping_info": {
+                    "$ref": "../../components/shipping_info/req_shipping_info.yaml"
+                  },
+                  "tag_ids": {
+                    "$ref": "../../components/tag_ids/req_tag_ids.yaml"
+                  },
+                  "term_id": {
+                    "$ref": "../../components/term_id/req_term_id.yaml"
+                  },
+                  "title": {
+                    "$ref": "../../components/title/req_title.yaml"
+                  },
+                  "description": {
+                    "$ref": "../../components/description/req_description.yaml"
+                  },
+                  "remarks": {
+                    "$ref": "../../components/remarks/req_remarks.yaml"
+                  },
+                  "tax_mode": {
+                    "$ref": "../../components/tax_mode/req_tax_mode.yaml"
+                  },
+                  "form_items": {
+                    "$ref": "../../components/form_items_normal/req_form_items_normal.yaml"
+                  },
+                  "email": {
+                    "$ref": "../../components/email/req_email.yaml"
+                  },
+                  "files": {
+                    "$ref": "../../components/files/req_files.yaml"
+                  },
+                  "fields": {
+                    "$ref": "../../../../../shared/requests/schemas/transactions/fields.yaml"
+                  }
+                },
+                "required": [
+                  "contact_id",
+                  "number",
+                  "date",
+                  "currency_code",
+                  "exchange_rate",
+                  "tax_mode",
+                  "form_items"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "An error occurred, check the response for more information."
+          },
+          "401": {
+            "description": "User is not authenticated."
+          },
+          "403": {
+            "description": "User is not authorised to access the resource."
+          }
+        },
+        "security": [
+          {
+            "BearerToken": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Sales Order"
+        ],
+        "summary": "Update Sales Order Status",
+        "description": "Only the following update paths are supported:\n  - `draft` → `pending_approval`\n  - `draft` → `ready`\n  - `pending_approval` → `ready`\n  - `ready` → `void`\n  - `void` → `ready`\n",
+        "parameters": [
+          {
+            "name": "transactionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "description": "ID of the transaction."
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "draft",
+                      "pending_approval",
+                      "ready",
+                      "void"
+                    ],
+                    "description": "The transaction status."
+                  },
+                  "void_reason": {
+                    "type": "string",
+                    "maxLength": 255,
+                    "description": "Provide a reason to void the transaction.\n\n<span style=\"color: red; font-weight: 800;\">\n  It is REQUIRED when VOID-ing a MyInvois VALIDATE transaction.\n</span>\n"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "An error occurred, check the response for more information."
+          },
+          "401": {
+            "description": "User is not authenticated."
+          },
+          "403": {
+            "description": "User is not authorised to access the resource."
+          }
+        },
+        "security": [
+          {
+            "BearerToken": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Sales Order"
+        ],
+        "summary": "Delete Sales Order",
+        "description": "Only transactions with `draft` and `void` statuses can be deleted.",
+        "parameters": [
+          {
+            "name": "transactionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "description": "ID of the transaction."
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "An error occurred, check the response for more information."
+          },
+          "401": {
+            "description": "User is not authenticated."
+          },
+          "403": {
+            "description": "User is not authorised to access the resource."
+          }
+        },
+        "security": [
+          {
+            "BearerToken": []
+          }
+        ]
+      }
+    },
+    "/sales/delivery_orders": {
+      "post": {
+        "tags": [
+          "Delivery Order"
+        ],
+        "summary": "Create Delivery Order",
+        "security": [
+          {
+            "BearerToken": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "contact_id": {
+                    "$ref": "../../components/customer_id/req_txn_customer_id.yaml"
+                  },
+                  "number": {
+                    "$ref": "../../../../../shared/requests/components/number/create.yaml"
+                  },
+                  "number2": {
+                    "$ref": "../../components/number2/req_txn_number2.yaml"
+                  },
+                  "date": {
+                    "$ref": "../../components/date/req_date.yaml"
+                  },
+                  "currency_code": {
+                    "$ref": "../../components/currency_code/req_currency_code.yaml"
+                  },
+                  "exchange_rate": {
+                    "$ref": "../../components/exchange_rate/req_exchange_rate.yaml"
+                  },
+                  "billing_party": {
+                    "$ref": "../../components/billing_party/req_billing_party.yaml"
+                  },
+                  "show_shipping": {
+                    "$ref": "../../components/show_shipping/req_show_shipping.yaml"
+                  },
+                  "shipping_party": {
+                    "$ref": "../../components/shipping_party/req_shipping_party.yaml"
+                  },
+                  "shipping_info": {
+                    "$ref": "../../components/shipping_info/req_shipping_info.yaml"
+                  },
+                  "tag_ids": {
+                    "$ref": "../../components/tag_ids/req_tag_ids.yaml"
+                  },
+                  "title": {
+                    "$ref": "../../components/title/req_title.yaml"
+                  },
+                  "description": {
+                    "$ref": "../../components/description/req_description.yaml"
+                  },
+                  "remarks": {
+                    "$ref": "../../components/remarks/req_remarks.yaml"
+                  },
+                  "tax_mode": {
+                    "$ref": "../../components/tax_mode/req_tax_mode.yaml"
+                  },
+                  "form_items": {
+                    "$ref": "../../components/form_items_normal/req_form_items_normal.yaml"
+                  },
+                  "status": {
+                    "$ref": "../../components/status_create/req_status_create.yaml"
+                  },
+                  "email": {
+                    "$ref": "../../components/email/req_email.yaml"
+                  },
+                  "files": {
+                    "$ref": "../../components/files/req_files.yaml"
+                  },
+                  "fields": {
+                    "$ref": "../../../../../shared/requests/schemas/transactions/fields.yaml"
+                  }
+                },
+                "required": [
+                  "contact_id",
+                  "date",
+                  "currency_code",
+                  "exchange_rate",
+                  "tax_mode",
+                  "form_items",
+                  "status"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "An error occurred, check the response for more information."
+          },
+          "401": {
+            "description": "User is not authenticated."
+          },
+          "403": {
+            "description": "User is not authorised to access the resource."
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Delivery Order"
+        ],
+        "summary": "Read Delivery Order List",
+        "parameters": [
+          {
+            "name": "search",
+            "in": "query",
+            "description": "Search for keywords in `No.`, `Reference No.`, `Title`, `Remarks`, `Description`, `Contact Name`, `Billing Party` & `Shipping Party`.",
+            "schema": {
+              "type": "string",
+              "maxLength": 100
+            }
+          },
+          {
+            "name": "custom_search",
+            "in": "query",
+            "description": "Search for keywords within custom fields, use format `DD/MM/YYYY` for a date.",
+            "schema": {
+              "type": "string",
+              "maxLength": 100
+            }
+          },
+          {
+            "name": "contact_id",
+            "in": "query",
+            "description": "Search by contact ID.",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "date_from",
+            "in": "query",
+            "description": "Search for transactions on and after the date.",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "date_to",
+            "in": "query",
+            "description": "Search for transactions on and before the date.",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "Search by status, defaults to All status but Void if not provided.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "draft",
+                "pending_approval",
+                "ready",
+                "void"
+              ]
+            }
+          },
+          {
+            "name": "email_status",
+            "in": "query",
+            "description": "Search by the latest email status.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "UNSENT",
+                "PENDING",
+                "SENT",
+                "BOUNCED",
+                "OPENED",
+                "VIEWED"
+              ]
+            }
+          },
+          {
+            "name": "transfer_status",
+            "in": "query",
+            "description": "Search by transfer status.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "ALL",
+                "NOT_TRANSFERRED",
+                "PARTIAL_TRANSFERRED",
+                "TRANSFERRED"
+              ]
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "The current page number.",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "default": 1
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "description": "Number of records per page.",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "default": 30
+            }
+          },
+          {
+            "name": "sort_by",
+            "in": "query",
+            "description": "Sort by field.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "number",
+                "date",
+                "contact_name",
+                "number2",
+                "title",
+                "description",
+                "amount",
+                "created_at"
+              ]
+            }
+          },
+          {
+            "name": "sort_dir",
+            "in": "query",
+            "description": "Sort the list in ascending or descending order.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "asc",
+                "desc"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "An error occurred, check the response for more information."
+          },
+          "401": {
+            "description": "User is not authenticated."
+          },
+          "403": {
+            "description": "User is not authorised to access the resource."
+          }
+        },
+        "security": [
+          {
+            "BearerToken": []
+          }
+        ]
+      }
+    },
+    "/sales/delivery_orders/{transactionId}": {
+      "get": {
+        "tags": [
+          "Delivery Order"
+        ],
+        "summary": "Read Delivery Order",
+        "parameters": [
+          {
+            "name": "transactionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "description": "ID of the transaction."
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "An error occurred, check the response for more information."
+          },
+          "401": {
+            "description": "User is not authenticated."
+          },
+          "403": {
+            "description": "User is not authorised to access the resource."
+          }
+        },
+        "security": [
+          {
+            "BearerToken": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Delivery Order"
+        ],
+        "summary": "Update Delivery Order",
+        "parameters": [
+          {
+            "name": "transactionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "description": "ID of the transaction."
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "contact_id": {
+                    "$ref": "../../components/customer_id/req_txn_customer_id.yaml"
+                  },
+                  "number": {
+                    "$ref": "../../../../../shared/requests/components/number/update.yaml"
+                  },
+                  "number2": {
+                    "$ref": "../../components/number2/req_txn_number2.yaml"
+                  },
+                  "date": {
+                    "$ref": "../../components/date/req_date.yaml"
+                  },
+                  "currency_code": {
+                    "$ref": "../../components/currency_code/req_currency_code.yaml"
+                  },
+                  "exchange_rate": {
+                    "$ref": "../../components/exchange_rate/req_exchange_rate.yaml"
+                  },
+                  "billing_party": {
+                    "$ref": "../../components/billing_party/req_billing_party.yaml"
+                  },
+                  "show_shipping": {
+                    "$ref": "../../components/show_shipping/req_show_shipping.yaml"
+                  },
+                  "shipping_party": {
+                    "$ref": "../../components/shipping_party/req_shipping_party.yaml"
+                  },
+                  "shipping_info": {
+                    "$ref": "../../components/shipping_info/req_shipping_info.yaml"
+                  },
+                  "tag_ids": {
+                    "$ref": "../../components/tag_ids/req_tag_ids.yaml"
+                  },
+                  "title": {
+                    "$ref": "../../components/title/req_title.yaml"
+                  },
+                  "description": {
+                    "$ref": "../../components/description/req_description.yaml"
+                  },
+                  "remarks": {
+                    "$ref": "../../components/remarks/req_remarks.yaml"
+                  },
+                  "tax_mode": {
+                    "$ref": "../../components/tax_mode/req_tax_mode.yaml"
+                  },
+                  "form_items": {
+                    "$ref": "../../components/form_items_normal/req_form_items_normal.yaml"
+                  },
+                  "email": {
+                    "$ref": "../../components/email/req_email.yaml"
+                  },
+                  "files": {
+                    "$ref": "../../components/files/req_files.yaml"
+                  },
+                  "fields": {
+                    "$ref": "../../../../../shared/requests/schemas/transactions/fields.yaml"
+                  }
+                },
+                "required": [
+                  "contact_id",
+                  "number",
+                  "date",
+                  "currency_code",
+                  "exchange_rate",
+                  "tax_mode",
+                  "form_items"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "An error occurred, check the response for more information."
+          },
+          "401": {
+            "description": "User is not authenticated."
+          },
+          "403": {
+            "description": "User is not authorised to access the resource."
+          }
+        },
+        "security": [
+          {
+            "BearerToken": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Delivery Order"
+        ],
+        "summary": "Update Delivery Order Status",
+        "description": "Only the following update paths are supported:\n  - `draft` → `pending_approval`\n  - `draft` → `ready`\n  - `pending_approval` → `ready`\n  - `ready` → `void`\n  - `void` → `ready`\n",
+        "parameters": [
+          {
+            "name": "transactionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "description": "ID of the transaction."
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "draft",
+                      "pending_approval",
+                      "ready",
+                      "void"
+                    ],
+                    "description": "The transaction status."
+                  },
+                  "void_reason": {
+                    "type": "string",
+                    "maxLength": 255,
+                    "description": "Provide a reason to void the transaction.\n\n<span style=\"color: red; font-weight: 800;\">\n  It is REQUIRED when VOID-ing a MyInvois VALIDATE transaction.\n</span>\n"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "An error occurred, check the response for more information."
+          },
+          "401": {
+            "description": "User is not authenticated."
+          },
+          "403": {
+            "description": "User is not authorised to access the resource."
+          }
+        },
+        "security": [
+          {
+            "BearerToken": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Delivery Order"
+        ],
+        "summary": "Delete Delivery Order",
         "description": "Only transactions with `draft` and `void` statuses can be deleted.",
         "parameters": [
           {
@@ -8365,561 +7622,6 @@
         ]
       }
     },
-    "/sales/credit_notes": {
-      "post": {
-        "tags": [
-          "Credit Note"
-        ],
-        "summary": "Create Credit Note",
-        "security": [
-          {
-            "BearerToken": []
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "contact_id": {
-                    "$ref": "../../components/customer_id/req_txn_customer_id.yaml"
-                  },
-                  "number": {
-                    "$ref": "../../../../../shared/requests/components/number/create.yaml"
-                  },
-                  "number2": {
-                    "$ref": "../../components/number2/req_txn_number2.yaml"
-                  },
-                  "date": {
-                    "$ref": "../../components/date/req_date.yaml"
-                  },
-                  "currency_code": {
-                    "$ref": "../../components/currency_code/req_currency_code.yaml"
-                  },
-                  "exchange_rate": {
-                    "$ref": "../../components/exchange_rate/req_exchange_rate.yaml"
-                  },
-                  "billing_party": {
-                    "$ref": "../../components/billing_party/req_billing_party.yaml"
-                  },
-                  "show_shipping": {
-                    "$ref": "../../components/show_shipping/req_show_shipping.yaml"
-                  },
-                  "shipping_party": {
-                    "$ref": "../../components/shipping_party/req_shipping_party.yaml"
-                  },
-                  "shipping_info": {
-                    "$ref": "../../components/shipping_info/req_shipping_info.yaml"
-                  },
-                  "tag_ids": {
-                    "$ref": "../../components/tag_ids/req_tag_ids.yaml"
-                  },
-                  "title": {
-                    "$ref": "../../components/title/req_title.yaml"
-                  },
-                  "description": {
-                    "$ref": "../../components/description/req_description.yaml"
-                  },
-                  "remarks": {
-                    "$ref": "../../components/remarks/req_remarks.yaml"
-                  },
-                  "tax_mode": {
-                    "$ref": "../../components/tax_mode/req_tax_mode.yaml"
-                  },
-                  "form_items": {
-                    "$ref": "../../components/form_items_myinvois_without_transfer/req_form_items_myinvois_without_transfer.yaml"
-                  },
-                  "link_items": {
-                    "$ref": "../../components/link_items/req_link_items.yaml"
-                  },
-                  "status": {
-                    "$ref": "../../components/status_create/req_status_create.yaml"
-                  },
-                  "email": {
-                    "$ref": "../../components/email/req_email.yaml"
-                  },
-                  "files": {
-                    "$ref": "../../components/files/req_files.yaml"
-                  },
-                  "fields": {
-                    "$ref": "../../../../../shared/requests/schemas/transactions/fields.yaml"
-                  },
-                  "customs_form_no": {
-                    "$ref": "../../components/customs_form_no/req_customs_form_no.yaml"
-                  },
-                  "customs_k2_form_no": {
-                    "$ref": "../../components/customs_k2_form_no/req_customs_k2_form_no.yaml"
-                  },
-                  "incoterms": {
-                    "$ref": "../../components/incoterms/req_incoterms.yaml"
-                  },
-                  "myinvois_action": {
-                    "$ref": "../myinvois_action/create.yaml"
-                  }
-                },
-                "required": [
-                  "contact_id",
-                  "date",
-                  "currency_code",
-                  "exchange_rate",
-                  "tax_mode",
-                  "form_items",
-                  "status"
-                ]
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "An error occurred, check the response for more information."
-          },
-          "401": {
-            "description": "User is not authenticated."
-          },
-          "403": {
-            "description": "User is not authorised to access the resource."
-          }
-        }
-      },
-      "get": {
-        "tags": [
-          "Credit Note"
-        ],
-        "summary": "Read Credit Note List",
-        "parameters": [
-          {
-            "name": "payment_status",
-            "in": "query",
-            "description": "Filter by payment status.",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "PAID",
-                "OUTSTANDING",
-                "OVERDUE"
-              ]
-            }
-          },
-          {
-            "name": "date_from",
-            "in": "query",
-            "description": "Search for transactions on and after the date.",
-            "schema": {
-              "type": "string",
-              "format": "date"
-            }
-          },
-          {
-            "name": "date_to",
-            "in": "query",
-            "description": "Search for transactions on and before the date.",
-            "schema": {
-              "type": "string",
-              "format": "date"
-            }
-          },
-          {
-            "name": "search",
-            "in": "query",
-            "description": "Search for keywords in `No.`, `Reference No.`, `Title`, `Remarks`, `Description`, `Contact Name`, `Billing Party` & `Shipping Party`.",
-            "schema": {
-              "type": "string",
-              "maxLength": 100
-            }
-          },
-          {
-            "name": "custom_search",
-            "in": "query",
-            "description": "Search for keywords within custom fields, use format `DD/MM/YYYY` for a date.",
-            "schema": {
-              "type": "string",
-              "maxLength": 100
-            }
-          },
-          {
-            "name": "contact_id",
-            "in": "query",
-            "description": "Search by contact ID.",
-            "schema": {
-              "type": "integer"
-            }
-          },
-          {
-            "name": "status",
-            "in": "query",
-            "description": "Search by status, defaults to All status but Void if not provided.",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "enum": [
-                "draft",
-                "pending_approval",
-                "ready",
-                "void"
-              ]
-            }
-          },
-          {
-            "name": "email_status",
-            "in": "query",
-            "description": "Search by the latest email status.",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "UNSENT",
-                "PENDING",
-                "SENT",
-                "BOUNCED",
-                "OPENED",
-                "VIEWED"
-              ]
-            }
-          },
-          {
-            "name": "sort_by",
-            "in": "query",
-            "description": "Sort by field.",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "number",
-                "date",
-                "contact_name",
-                "number2",
-                "title",
-                "description",
-                "amount",
-                "balance",
-                "created_at"
-              ]
-            }
-          },
-          {
-            "name": "sort_dir",
-            "in": "query",
-            "description": "Sort the list in ascending or descending order.",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "asc",
-                "desc"
-              ]
-            }
-          },
-          {
-            "name": "page",
-            "in": "query",
-            "description": "The current page number.",
-            "schema": {
-              "type": "integer",
-              "minimum": 1,
-              "default": 1
-            }
-          },
-          {
-            "name": "page_size",
-            "in": "query",
-            "description": "Number of records per page.",
-            "schema": {
-              "type": "integer",
-              "minimum": 1,
-              "maximum": 100,
-              "default": 30
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "An error occurred, check the response for more information."
-          },
-          "401": {
-            "description": "User is not authenticated."
-          },
-          "403": {
-            "description": "User is not authorised to access the resource."
-          }
-        },
-        "security": [
-          {
-            "BearerToken": []
-          }
-        ]
-      }
-    },
-    "/sales/credit_notes/{transactionId}": {
-      "get": {
-        "tags": [
-          "Credit Note"
-        ],
-        "summary": "Read Credit Note",
-        "parameters": [
-          {
-            "name": "transactionId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "description": "ID of the transaction."
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "An error occurred, check the response for more information."
-          },
-          "401": {
-            "description": "User is not authenticated."
-          },
-          "403": {
-            "description": "User is not authorised to access the resource."
-          }
-        },
-        "security": [
-          {
-            "BearerToken": []
-          }
-        ]
-      },
-      "put": {
-        "tags": [
-          "Credit Note"
-        ],
-        "summary": "Update Credit Note",
-        "parameters": [
-          {
-            "name": "transactionId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "description": "ID of the transaction."
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "contact_id": {
-                    "$ref": "../../components/customer_id/req_txn_customer_id.yaml"
-                  },
-                  "number": {
-                    "$ref": "../../../../../shared/requests/components/number/update.yaml"
-                  },
-                  "number2": {
-                    "$ref": "../../components/number2/req_txn_number2.yaml"
-                  },
-                  "date": {
-                    "$ref": "../../components/date/req_date.yaml"
-                  },
-                  "currency_code": {
-                    "$ref": "../../components/currency_code/req_currency_code.yaml"
-                  },
-                  "exchange_rate": {
-                    "$ref": "../../components/exchange_rate/req_exchange_rate.yaml"
-                  },
-                  "billing_party": {
-                    "$ref": "../../components/billing_party/req_billing_party.yaml"
-                  },
-                  "show_shipping": {
-                    "$ref": "../../components/show_shipping/req_show_shipping.yaml"
-                  },
-                  "shipping_party": {
-                    "$ref": "../../components/shipping_party/req_shipping_party.yaml"
-                  },
-                  "shipping_info": {
-                    "$ref": "../../components/shipping_info/req_shipping_info.yaml"
-                  },
-                  "tag_ids": {
-                    "$ref": "../../components/tag_ids/req_tag_ids.yaml"
-                  },
-                  "title": {
-                    "$ref": "../../components/title/req_title.yaml"
-                  },
-                  "description": {
-                    "$ref": "../../components/description/req_description.yaml"
-                  },
-                  "remarks": {
-                    "$ref": "../../components/remarks/req_remarks.yaml"
-                  },
-                  "tax_mode": {
-                    "$ref": "../../components/tax_mode/req_tax_mode.yaml"
-                  },
-                  "form_items": {
-                    "$ref": "../../components/form_items_myinvois_without_transfer/req_form_items_myinvois_without_transfer.yaml"
-                  },
-                  "link_items": {
-                    "$ref": "../../components/link_items/req_link_items.yaml"
-                  },
-                  "email": {
-                    "$ref": "../../components/email/req_email.yaml"
-                  },
-                  "files": {
-                    "$ref": "../../components/files/req_files.yaml"
-                  },
-                  "fields": {
-                    "$ref": "../../../../../shared/requests/schemas/transactions/fields.yaml"
-                  },
-                  "customs_form_no": {
-                    "$ref": "../../components/customs_form_no/req_customs_form_no.yaml"
-                  },
-                  "customs_k2_form_no": {
-                    "$ref": "../../components/customs_k2_form_no/req_customs_k2_form_no.yaml"
-                  },
-                  "incoterms": {
-                    "$ref": "../../components/incoterms/req_incoterms.yaml"
-                  },
-                  "myinvois_action": {
-                    "$ref": "../myinvois_action/update.yaml"
-                  }
-                },
-                "required": [
-                  "contact_id",
-                  "number",
-                  "date",
-                  "currency_code",
-                  "exchange_rate",
-                  "tax_mode",
-                  "form_items"
-                ]
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "An error occurred, check the response for more information."
-          },
-          "401": {
-            "description": "User is not authenticated."
-          },
-          "403": {
-            "description": "User is not authorised to access the resource."
-          }
-        },
-        "security": [
-          {
-            "BearerToken": []
-          }
-        ]
-      },
-      "patch": {
-        "tags": [
-          "Credit Note"
-        ],
-        "summary": "Update Credit Note Status",
-        "description": "Only the following update paths are supported:\n  - `draft` → `pending_approval`\n  - `draft` → `ready`\n  - `pending_approval` → `ready`\n  - `ready` → `void`\n  - `void` → `ready`\n",
-        "parameters": [
-          {
-            "name": "transactionId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "description": "ID of the transaction."
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "status": {
-                    "type": "string",
-                    "enum": [
-                      "draft",
-                      "pending_approval",
-                      "ready",
-                      "void"
-                    ],
-                    "description": "The transaction status."
-                  },
-                  "void_reason": {
-                    "type": "string",
-                    "maxLength": 255,
-                    "description": "Provide a reason to void the transaction.\n\n<span style=\"color: red; font-weight: 800;\">\n  It is REQUIRED when VOID-ing a MyInvois VALIDATE transaction.\n</span>\n"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "An error occurred, check the response for more information."
-          },
-          "401": {
-            "description": "User is not authenticated."
-          },
-          "403": {
-            "description": "User is not authorised to access the resource."
-          }
-        },
-        "security": [
-          {
-            "BearerToken": []
-          }
-        ]
-      },
-      "delete": {
-        "tags": [
-          "Credit Note"
-        ],
-        "summary": "Delete Credit Note",
-        "description": "Only transactions with `draft` and `void` statuses can be deleted.",
-        "parameters": [
-          {
-            "name": "transactionId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "description": "ID of the transaction."
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "An error occurred, check the response for more information."
-          },
-          "401": {
-            "description": "User is not authenticated."
-          },
-          "403": {
-            "description": "User is not authorised to access the resource."
-          }
-        },
-        "security": [
-          {
-            "BearerToken": []
-          }
-        ]
-      }
-    },
     "/sales/payments": {
       "post": {
         "tags": [
@@ -9395,504 +8097,6 @@
           "Payment"
         ],
         "summary": "Delete Payment",
-        "description": "Only transactions with `draft` and `void` statuses can be deleted.",
-        "parameters": [
-          {
-            "name": "transactionId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "description": "ID of the transaction."
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "An error occurred, check the response for more information."
-          },
-          "401": {
-            "description": "User is not authenticated."
-          },
-          "403": {
-            "description": "User is not authorised to access the resource."
-          }
-        },
-        "security": [
-          {
-            "BearerToken": []
-          }
-        ]
-      }
-    },
-    "/sales/refunds": {
-      "post": {
-        "tags": [
-          "Refund"
-        ],
-        "summary": "Create Refund",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "contact_id": {
-                    "$ref": "../../components/customer_id/req_txn_customer_id.yaml"
-                  },
-                  "number": {
-                    "$ref": "../../../../../shared/requests/components/number/create.yaml"
-                  },
-                  "number2": {
-                    "$ref": "../../components/number2/req_txn_number2.yaml"
-                  },
-                  "date": {
-                    "$ref": "../../components/date/req_date.yaml"
-                  },
-                  "currency_code": {
-                    "$ref": "../../components/currency_code/req_currency_code.yaml"
-                  },
-                  "exchange_rate": {
-                    "$ref": "../../components/exchange_rate/req_exchange_rate.yaml"
-                  },
-                  "tag_ids": {
-                    "$ref": "../../components/tag_ids/req_tag_ids.yaml"
-                  },
-                  "description": {
-                    "$ref": "../../components/description/req_description.yaml"
-                  },
-                  "remarks": {
-                    "$ref": "../../components/remarks/req_remarks.yaml"
-                  },
-                  "link_items": {
-                    "$ref": "../../components/link_items/req_link_items.yaml"
-                  },
-                  "deposit_items": {
-                    "$ref": "../../components/deposit_items/req_deposit_items.yaml"
-                  },
-                  "status": {
-                    "$ref": "../../components/status_create/req_status_create.yaml"
-                  },
-                  "email": {
-                    "$ref": "../../components/email/req_email.yaml"
-                  },
-                  "files": {
-                    "$ref": "../../components/files/req_files.yaml"
-                  },
-                  "fields": {
-                    "$ref": "../../../../../shared/requests/schemas/transactions/fields.yaml"
-                  }
-                },
-                "required": [
-                  "contact_id",
-                  "date",
-                  "currency_code",
-                  "exchange_rate",
-                  "deposit_items",
-                  "status"
-                ]
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "An error occurred, check the response for more information."
-          },
-          "401": {
-            "description": "User is not authenticated."
-          },
-          "403": {
-            "description": "User is not authorised to access the resource."
-          }
-        },
-        "security": [
-          {
-            "BearerToken": []
-          }
-        ]
-      },
-      "get": {
-        "tags": [
-          "Refund"
-        ],
-        "summary": "Read Refund List",
-        "parameters": [
-          {
-            "name": "search",
-            "in": "query",
-            "description": "Search for keywords in `No.`, `Reference No.`, `Title`, `Remarks`, `Description`, `Contact Name`, `Billing Party` & `Shipping Party`.",
-            "schema": {
-              "type": "string",
-              "maxLength": 100
-            }
-          },
-          {
-            "name": "custom_search",
-            "in": "query",
-            "description": "Search for keywords within custom fields, use format `DD/MM/YYYY` for a date.",
-            "schema": {
-              "type": "string",
-              "maxLength": 100
-            }
-          },
-          {
-            "name": "contact_id",
-            "in": "query",
-            "description": "Search by contact ID.",
-            "schema": {
-              "type": "integer"
-            }
-          },
-          {
-            "name": "date_from",
-            "in": "query",
-            "description": "Search for transactions on and after the date.",
-            "schema": {
-              "type": "string",
-              "format": "date"
-            }
-          },
-          {
-            "name": "date_to",
-            "in": "query",
-            "description": "Search for transactions on and before the date.",
-            "schema": {
-              "type": "string",
-              "format": "date"
-            }
-          },
-          {
-            "name": "status",
-            "in": "query",
-            "description": "Search by status, defaults to All status but Void if not provided.",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "enum": [
-                "draft",
-                "pending_approval",
-                "ready",
-                "void"
-              ]
-            }
-          },
-          {
-            "name": "payment_status",
-            "in": "query",
-            "description": "Filter by payment status.",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "paid",
-                "outstanding"
-              ]
-            }
-          },
-          {
-            "name": "email_status",
-            "in": "query",
-            "description": "Search by the latest email status.",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "UNSENT",
-                "PENDING",
-                "SENT",
-                "BOUNCED",
-                "OPENED",
-                "VIEWED"
-              ]
-            }
-          },
-          {
-            "name": "page",
-            "in": "query",
-            "description": "The current page number.",
-            "schema": {
-              "type": "integer",
-              "minimum": 1,
-              "default": 1
-            }
-          },
-          {
-            "name": "page_size",
-            "in": "query",
-            "description": "Number of records per page.",
-            "schema": {
-              "type": "integer",
-              "minimum": 1,
-              "maximum": 100,
-              "default": 30
-            }
-          },
-          {
-            "name": "sort_by",
-            "in": "query",
-            "description": "Sort by field.",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "number",
-                "date",
-                "contact_name",
-                "number2",
-                "description",
-                "amount",
-                "created_at"
-              ]
-            }
-          },
-          {
-            "name": "sort_dir",
-            "in": "query",
-            "description": "Sort the list in ascending or descending order.",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "asc",
-                "desc"
-              ]
-            }
-          },
-          {
-            "name": "account_id",
-            "in": "query",
-            "description": "Filter by accounts in `Current Assets`, `Non-Current Assets`, `Current Liabilities` and `Equity`.",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "An error occurred, check the response for more information."
-          },
-          "401": {
-            "description": "User is not authenticated."
-          },
-          "403": {
-            "description": "User is not authorised to access the resource."
-          }
-        },
-        "security": [
-          {
-            "BearerToken": []
-          }
-        ]
-      }
-    },
-    "/sales/refunds/{transactionId}": {
-      "get": {
-        "tags": [
-          "Refund"
-        ],
-        "summary": "Read Refund",
-        "parameters": [
-          {
-            "name": "transactionId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "description": "ID of the transaction."
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "An error occurred, check the response for more information."
-          },
-          "401": {
-            "description": "User is not authenticated."
-          },
-          "403": {
-            "description": "User is not authorised to access the resource."
-          }
-        },
-        "security": [
-          {
-            "BearerToken": []
-          }
-        ]
-      },
-      "put": {
-        "tags": [
-          "Refund"
-        ],
-        "summary": "Update Refund",
-        "parameters": [
-          {
-            "name": "transactionId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "description": "ID of the transaction."
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "contact_id": {
-                    "$ref": "../../components/customer_id/req_txn_customer_id.yaml"
-                  },
-                  "number": {
-                    "$ref": "../../../../../shared/requests/components/number/update.yaml"
-                  },
-                  "number2": {
-                    "$ref": "../../components/number2/req_txn_number2.yaml"
-                  },
-                  "date": {
-                    "$ref": "../../components/date/req_date.yaml"
-                  },
-                  "currency_code": {
-                    "$ref": "../../components/currency_code/req_currency_code.yaml"
-                  },
-                  "exchange_rate": {
-                    "$ref": "../../components/exchange_rate/req_exchange_rate.yaml"
-                  },
-                  "tag_ids": {
-                    "$ref": "../../components/tag_ids/req_tag_ids.yaml"
-                  },
-                  "description": {
-                    "$ref": "../../components/description/req_description.yaml"
-                  },
-                  "remarks": {
-                    "$ref": "../../components/remarks/req_remarks.yaml"
-                  },
-                  "link_items": {
-                    "$ref": "../../components/link_items/req_link_items.yaml"
-                  },
-                  "deposit_items": {
-                    "$ref": "../../components/deposit_items/req_deposit_items.yaml"
-                  },
-                  "email": {
-                    "$ref": "../../components/email/req_email.yaml"
-                  },
-                  "files": {
-                    "$ref": "../../components/files/req_files.yaml"
-                  },
-                  "fields": {
-                    "$ref": "../../../../../shared/requests/schemas/transactions/fields.yaml"
-                  }
-                },
-                "required": [
-                  "contact_id",
-                  "date",
-                  "currency_code",
-                  "exchange_rate",
-                  "deposit_items",
-                  "number"
-                ]
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "An error occurred, check the response for more information."
-          },
-          "401": {
-            "description": "User is not authenticated."
-          },
-          "403": {
-            "description": "User is not authorised to access the resource."
-          }
-        },
-        "security": [
-          {
-            "BearerToken": []
-          }
-        ]
-      },
-      "patch": {
-        "tags": [
-          "Refund"
-        ],
-        "summary": "Update Refund Status",
-        "description": "Only the following update paths are supported:\n  - `draft` → `pending_approval`\n  - `draft` → `ready`\n  - `pending_approval` → `ready`\n  - `ready` → `void`\n  - `void` → `ready`\n",
-        "parameters": [
-          {
-            "name": "transactionId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "description": "ID of the transaction."
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "status": {
-                    "type": "string",
-                    "enum": [
-                      "draft",
-                      "pending_approval",
-                      "ready",
-                      "void"
-                    ],
-                    "description": "The transaction status."
-                  },
-                  "void_reason": {
-                    "type": "string",
-                    "maxLength": 255,
-                    "description": "Provide a reason to void the transaction.\n\n<span style=\"color: red; font-weight: 800;\">\n  It is REQUIRED when VOID-ing a MyInvois VALIDATE transaction.\n</span>\n"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "An error occurred, check the response for more information."
-          },
-          "401": {
-            "description": "User is not authenticated."
-          },
-          "403": {
-            "description": "User is not authorised to access the resource."
-          }
-        },
-        "security": [
-          {
-            "BearerToken": []
-          }
-        ]
-      },
-      "delete": {
-        "tags": [
-          "Refund"
-        ],
-        "summary": "Delete Refund",
         "description": "Only transactions with `draft` and `void` statuses can be deleted.",
         "parameters": [
           {
